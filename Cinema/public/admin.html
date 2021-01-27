@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Aria is a business focused HTML landing page template built with Bootstrap to help you create lead generation websites for companies and their services.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Hollywood</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a href="index.html" style = "text-decoration: none;" ><h1 style = "color:#f0f8ff;" >Hollywood <font color = "#14bf98" > // </font> ADMIN</h1></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            
+            <ul class="navbar-nav ml-auto">
+                
+                <!-- Dropdown Menu -->          
+                <li class="nav-item dropdown">
+                    <a class="nav-link page-scroll" href="index.html" id="navbarDropdown" >HOME</a>
+                </li>
+                <!-- end of dropdown menu -->
+                
+
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#itens" id = "abrirItens">ITENS</a>
+                </li>
+                
+            </ul>
+            <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <span class="hexagon"></span>
+                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <span class="hexagon"></span>
+                        <i class="fab fa-twitter fa-stack-1x"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navbar -->
+
+
+
+
+
+
+    <!-- Itens ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+	<div id="itens" class="filter form-1" style = "background-color: #153e52;" >
+        <div ><br><br></div>
+		<div class="container ">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title" >ITENS</div>
+                    <h2>Todos os itens:</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Filter -->
+                    <div class="button-group filters-button-group">
+                        <a id = "itensShowAll" class="button is-checked" data-filter="*"><span>MOSTRAR TODOS</span></a>
+                        <a id = "itensFilmes" class="button" data-filter=".filmes"><span>FILMES</span></a>
+                        <a id = "itensAtores" class="button" data-filter=".atores"><span>ATORES</span></a>
+                        <a id = "itensEstudios" class="button" data-filter=".estudios"><span>ESTUDIOS</span></a>
+                        <a id = "itensRealizadores" class="button" data-filter=".realizadores"><span>REALIZADORES</span></a>
+                        <a id = "itensCinemas" class="button" data-filter=".cinemas"><span>CINEMAS</span></a>
+                    </div> <!-- end of button group -->
+                    <div class="grid">
+                        <div class="element-item filmes" >
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-1" href="#project-1"><div class="element-item-overlay"><span>Endgame</span></div><img src="images/dados/endgame.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item realizadores" >
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-2" href="#project-2"><div class="element-item-overlay"><span>Anthony Russo e Joe Russo</span></div><img src="images/dados/joeRussoAnthonyRusso.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item atores">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-3" href="#project-3"><div class="element-item-overlay"><span>Robert Downey Jr</span></div><img src="images/dados/Robert John Downey, Jr.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item estudios">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-4" href="#project-4"><div class="element-item-overlay"><span>Marvel Studios</span></div><img src="images/dados/marvelStudios.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item cinemas">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-5" href="#project-5"><div class="element-item-overlay"><span>NOS - Centro Comercial Colombo</span></div><img src="images/dados/nos_colombo.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item filmes">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-6" href="#project-6"><div class="element-item-overlay"><span>Come Play</span></div><img src="images/dados/comePlay.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item atores">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-7" href="#project-7"><div class="element-item-overlay"><span>Johnny Depp</span></div><img src="images/dados/johnny depp.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item filmes">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-8" href="#project-8"><div class="element-item-overlay"><span>Black Widow</span></div><img src="images/dados/blackWidow.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item cinemas">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-9" href="#project-9"><div class="element-item-overlay"><span>UCI - UBBO</span></div><img src="images/dados/uci_ubbo.png" alt="alternative"></a>
+                        </div>
+                        <div class="element-item filmes">
+                            <a class="popup-with-move-anim" id = "itensAbrirProject-10" href="#project-10"><div class="element-item-overlay"><span>Pirates of the Caribbean: The Curse of the Black Pearl</span></div><img src="images/dados/piratasDasCaraibas.jpg" alt="alternative"></a>
+                        </div>
+                    </div> <!-- end of grid -->
+                    <!-- end of filter -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <br><br>
+            <div class="form-group"  >
+                <button id = "buttonAlterar" type="submit" class="form-control-submit-button popup-with-move-anim" id = "abrirNovoFilme" href = "#novoFilme" style = "width:15%;" >Adicionar Filme</button>                
+                <button id = "buttonAlterar" type="submit" class="form-control-submit-button popup-with-move-anim" id = "abrirNovoAtor" href = "#novoAtor" style = "width:15%;margin-left:5%;" >Adicionar Ator</button>                
+                <button id = "buttonAlterar" type="submit" class="form-control-submit-button popup-with-move-anim" id = "abrirNovoEstudio" href = "#novoEstudio" style = "width:15%;margin-left:5%;" >Adicionar Estúdio</button>                
+                <button id = "buttonAlterar" type="submit" class="form-control-submit-button popup-with-move-anim" id = "abrirNovoRealizador" href = "#novoRealizador" style = "width:15%;margin-left:5%;" >Adicionar Realizador</button>                
+                <button id = "buttonAlterar" type="submit" class="form-control-submit-button popup-with-move-anim" id = "abrirNovoCinema" href = "#novoCinema" style = "width:15%;margin-left:5%;" >Adicionar Cinemas</button>                
+            </div>
+        </div> <!-- end of container -->
+        
+    </div> <!-- end of filter -->
+    <!-- end of projects -->
+
+
+    <!-- Project Lightboxes -->
+    <!-- Lightbox -->
+    <div id="project-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/endgame.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-1" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nomeOriginal">Nome Original</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomeOriginal" name="nomeOriginal" value = "Advengers: Endgame" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nomePortugues">Nome Português</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomePortugues" name="nomePortugues" value = "Vingadores: Ultimato" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="sinopse">Sinopse</label>
+                        <textarea style = "width: 100%;" class="" id="sinopse" name="sinopse" rows = "5" required> Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.</textarea> 
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="" for="realizador">Realizador</label>
+                        <input type="text" style = "width: 100%;" class="" id="realizador" name="realizador" value = "Anthony Russo e Joe Russo" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="estudio">Estúdio</label>
+                        <input type="text" style = "width: 100%;" class="" id="estudio" name="estudio" value = "Marvel Studios" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="duracaoDasFilmagens">Duração das Filmagens (meses)</label>
+                        <input type="number" style = "width: 100%;" class="" id="duracaoDasFilmagens" name="duracaoDasFilmagens" value = "24" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="anoLancamento">Ano Lançamento</label>
+                        <input type="number" style = "width: 100%;" class="" id="anoLancamento" name="anoLancamento" value = "2019" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="custoTotal">Custo total</label>
+                        <input type="text" style = "width: 100%;" class="" id="custoTotal" name="custoTotal" value = "357 milhões" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/joeRussoAnthonyRusso.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-2" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "Anthony Russo e Joe Russo" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="telefone">Número de telefone</label>
+                        <input type="text" style = "width: 100%;" class="" id="telefone" name="telefone" value = "+315 214 242 234" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+
+    <!-- Lightbox -->
+    <div id="project-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/Robert John Downey, Jr.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-3" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "Robert Downey Jr" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nIdentidade">Nº de identidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="nIdentidade" name="nIdentidade" value = "nIdentidade" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                                  
+                    <div class="form-group">
+                        <label class="" for="segSocial">Nº de Segurança Social</label>
+                        <input type="text" style = "width: 100%;" class="" id="segSocial" name="segSocial" value = "segSocial" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="nacionalidade">Nacionalidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="nacionalidade" name="nacionalidade" value = "Americano" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="dataDeNascimento">Data de nascimento</label>
+                        <input type="text" style = "width: 100%;" class="" id="dataDeNascimento" name="dataDeNascimento" value = "4 de abril de 1965" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="telefone">Nº de telefone</label>
+                        <input type="text" style = "width: 100%;" class="" id="telefone" name="telefone" value = "+315 965 275 597" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="sexo">Sexo</label>
+                        <input type="text" style = "width: 100%;" class="" id="sexo" name="sexo" value = "Masculino" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="" for="email">Email</label>
+                        <input type="email" style = "width: 100%;" class="" id="email" name="email" value = "Robert@gmail.com" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="" for="sexo">Sexo</label>
+                        <input type="text" style = "width: 100%;" class="" id="sexo" name="sexo" value = "Masculino" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/marvelStudios.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-4" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "Marvel Studios" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="dono">Dono</label>
+                        <input type="text" style = "width: 100%;" class="" id="dono" name="dono" value = "Kevin Feige" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                 
+                    <div class="form-group">
+                        <label class="" for="endereco">Endereço</label>
+                        <input type="text" style = "width: 100%;" class="" id="endereco" name="endereco" value = "Burbank, Califórnia, Estados Unidos" required>
+                        <div class="help-block with-errors"></div>
+                    </div>               
+                    <div class="form-group">
+                        <label class="" for="anoFundacao">Ano de fundação</label>
+                        <input type="number" style = "width: 100%;" class="" id="dtFundacao" name="dtFundacao" value = "1993" required>
+                        <div class="help-block with-errors"></div>
+                    </div>    
+                    <div class="form-group">
+                        <label class="" for="lucro">Lucro do ano anterior</label>
+                        <input type="text" style = "width: 100%;" class="" id="lucro" name="dtFundlucrocao" value = "US$ 16,8 bilhões" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+   
+
+    <!-- Lightbox -->
+    <div id="project-5" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/nos_colombo.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-5" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "NOS" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="localidade">Localidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="localidade" name="localidade" value = "Centro Comercial Colombo, Lisboa, Portugal" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <div id="project-6" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/comePlay.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-6" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nomeOriginal">Nome Original</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomeOriginal" name="nomeOriginal" value = "Come Play" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nomePortugues">Nome Português</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomePortugues" name="nomePortugues" value = "A Maldição de Larry" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="sinopse">Sinopse</label>
+                        <textarea style = "width: 100%;" class="" id="sinopse" name="sinopse" rows = "5" required> Oliver (Azhy Robertson) é um rapaz solitário que se sente diferente de toda a gente. Desesperado para arranjar um amigo, procura consolo e refúgio no telemóvel e no tablet que nunca larga. Quando uma misteriosa criatura utiliza os dispositivos de Oliver contra ele, para conseguir entrar no nosso mundo, os pais de Oliver (Gillian Jacobs e John Gallagher Jr.) têm de lutar para salvar o filho do monstro por trás dos ecrãs.</textarea> 
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="" for="realizador">Realizador</label>
+                        <input type="text" style = "width: 100%;" class="" id="realizador" name="realizador" value = "Jacob Chase" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="estudio">Estúdio</label>
+                        <input type="text" style = "width: 100%;" class="" id="estudio" name="estudio" value = "The Picture Company" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="duracaoDasFilmagens">Duração das Filmagens (meses)</label>
+                        <input type="number" style = "width: 100%;" class="" id="duracaoDasFilmagens" name="duracaoDasFilmagens" value = "12" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="anoLancamento">Ano Lançamento</label>
+                        <input type="number" style = "width: 100%;" class="" id="anoLancamento" name="anoLancamento" value = "2020" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="custoTotal">Custo total</label>
+                        <input type="text" style = "width: 100%;" class="" id="custoTotal" name="custoTotal" value = "50 mil" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-7" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/johnny depp.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-7" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "Johnny Depp" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nIdentidade">Nº de identidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="nIdentidade" name="nIdentidade" value = "nIdentidade" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                                  
+                    <div class="form-group">
+                        <label class="" for="segSocial">Nº de Segurança Social</label>
+                        <input type="text" style = "width: 100%;" class="" id="segSocial" name="segSocial" value = "segSocial" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="nacionalidade">Nacionalidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="nacionalidade" name="nacionalidade" value = "Americano" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="dataDeNascimento">Data de nascimento</label>
+                        <input type="text" style = "width: 100%;" class="" id="dataDeNascimento" name="dataDeNascimento" value = "4 de junho de 1963" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="telefone">Nº de telefone</label>
+                        <input type="text" style = "width: 100%;" class="" id="telefone" name="telefone" value = "+315 965 275 597" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="sexo">Sexo</label>
+                        <input type="text" style = "width: 100%;" class="" id="sexo" name="sexo" value = "Masculino" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="" for="email">Email</label>
+                        <input type="email" style = "width: 100%;" class="" id="email" name="email" value = "johnny@gmail.com" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="" for="sexo">Sexo</label>
+                        <input type="text" style = "width: 100%;" class="" id="sexo" name="sexo" value = "Masculino" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+                <a class="btn-solid-reg" href="#your-link" id = "itensNFav7" ><i  class="far fa-heart"></i></a><a class="btn-solid-reg" href="#your-link" id = "itensFav7" hidden = "hidden"><i class="fas fa-heart"></i></a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-8" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/blackWidow.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-8" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nomeOriginal">Nome Original</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomeOriginal" name="nomeOriginal" value = "Black Widow" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nomePortugues">Nome Português</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomePortugues" name="nomePortugues" value = "Viúva Negra" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="sinopse">Sinopse</label>
+                        <textarea style = "width: 100%;" class="" id="sinopse" name="sinopse" rows = "5" required> Em Viúva Negra, após seu nascimento, Natasha Romanoff (Scarlett Johansson) é dada à KGB, que a prepara para se tornar sua agente definitiva. Quando a URSS rompe, o governo tenta matá-la enquanto a ação se move para a atual Nova York, onde ela trabalha como freelancer.</textarea> 
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="" for="realizador">Realizador</label>
+                        <input type="text" style = "width: 100%;" class="" id="realizador" name="realizador" value = "Cate Shortland" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="estudio">Estúdio</label>
+                        <input type="text" style = "width: 100%;" class="" id="estudio" name="estudio" value = "Marvel Studios" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="duracaoDasFilmagens">Duração das Filmagens (meses)</label>
+                        <input type="number" style = "width: 100%;" class="" id="duracaoDasFilmagens" name="duracaoDasFilmagens" value = "12" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="anoLancamento">Ano Lançamento</label>
+                        <input type="number" style = "width: 100%;" class="" id="anoLancamento" name="anoLancamento" value = "2020" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="custoTotal">Custo total</label>
+                        <input type="text" style = "width: 100%;" class="" id="custoTotal" name="custoTotal" value = "150 milhões" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    
+    <!-- Lightbox -->
+    <div id="project-9" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/uci_ubbo.png" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-9" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "UBBO" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="localidade">Localidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="localidade" name="localidade" value = "UBBO, Lisboa, Portugal" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-10" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/dados/piratasDasCaraibas.jpg">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <form id="alterarProject-1" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nomeOriginal">Nome Original</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomeOriginal" name="nomeOriginal" value = "Pirates of the Caribbean: The Curse of the Black Pearl" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nomePortugues">Nome Português</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomePortugues" name="nomePortugues" value = "Piratas das Caraíbas: A Maldição do Pérola Negra" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="sinopse">Sinopse</label>
+                        <textarea style = "width: 100%;" class="" id="sinopse" name="sinopse" rows = "5" required>O pirata Jack Sparrow tem seu navio saqueado e roubado pelo capitão Barbossa e sua tripulação. Com o navio de Sparrow, Barbossa invade a cidade de Port Royal, levando consigo Elizabeth Swann, filha do governador. Para recuperar sua embarcação, Sparrow recebe a ajuda de Will Turner, um grande amigo de Elizabeth. Eles desbravam os mares em direção à misteriosa Ilha da Morte, tentando impedir que os piratas-esqueleto derramem o sangue de Elizabeth para desfazer a maldição que os assola.</textarea> 
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="" for="realizador">Realizador</label>
+                        <input type="text" style = "width: 100%;" class="" id="realizador" name="realizador" value = "Gore Verbinski" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="estudio">Estúdio</label>
+                        <input type="text" style = "width: 100%;" class="" id="estudio" name="estudio" value = "Walt Disney Pictures" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="duracaoDasFilmagens">Duração das Filmagens (meses)</label>
+                        <input type="number" style = "width: 100%;" class="" id="duracaoDasFilmagens" name="duracaoDasFilmagens" value = "12" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="anoLancamento">Ano Lançamento</label>
+                        <input type="number" style = "width: 100%;" class="" id="anoLancamento" name="anoLancamento" value = "2003" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="custoTotal">Custo total</label>
+                        <input type="text" style = "width: 100%;" class="" id="custoTotal" name="custoTotal" value = "140 milhões" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 50%;" class="form-control-submit-button">ALTERAR</button>
+                        <button id = "buttonAlterar" type="button" style = "margin-left:10%;width: 30%;" class="form-control-delete-button">ELIMINAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+                
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+
+    <div id="novoFilme" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-12">
+                <form id="formNovoFilme" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nomeOriginal">Nome Original</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomeOriginal" name="nomeOriginal" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nomePortugues">Nome Português</label>
+                        <input type="text" style = "width: 100%;" class="" id="nomePortugues" name="nomePortugues" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="sinopse">Sinopse</label>
+                        <textarea style = "width: 100%;" class="" id="sinopse" name="sinopse" rows = "5" required> </textarea> 
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="" for="realizador">Realizador</label>
+                        <input type="text" style = "width: 100%;" class="" id="realizador" name="realizador" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="estudio">Estúdio</label>
+                        <input type="text" style = "width: 100%;" class="" id="estudio" name="estudio" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="duracaoDasFilmagens">Duração das Filmagens (meses)</label>
+                        <input type="number" style = "width: 100%;" class="" id="duracaoDasFilmagens" name="duracaoDasFilmagens" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="anoLancamento">Ano Lançamento</label>
+                        <input type="number" style = "width: 100%;" class="" id="anoLancamento" name="anoLancamento" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="custoTotal">Custo total</label>
+                        <input type="text" style = "width: 100%;" class="" id="custoTotal" name="custoTotal" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAdicionar" type="submit" style = "width: 100%;" class="form-control-submit-button">ADICIONAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+
+    <div id="novoAtor" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-12">
+                <form id="formNovoAtor" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="" for="nIdentidade">Nº de identidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="nIdentidade" name="nIdentidade" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                                  
+                    <div class="form-group">
+                        <label class="" for="segSocial">Nº de Segurança Social</label>
+                        <input type="text" style = "width: 100%;" class="" id="segSocial" name="segSocial" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="nacionalidade">Nacionalidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="nacionalidade" name="nacionalidade" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="dataDeNascimento">Data de nascimento</label>
+                        <input type="text" style = "width: 100%;" class="" id="dataDeNascimento" name="dataDeNascimento" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="telefone">Nº de telefone</label>
+                        <input type="text" style = "width: 100%;" class="" id="telefone" name="telefone" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="" for="sexo">Sexo</label>
+                        <input type="text" style = "width: 100%;" class="" id="sexo" name="sexo" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="" for="email">Email</label>
+                        <input type="email" style = "width: 100%;" class="" id="email" name="email" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="" for="sexo">Sexo</label>
+                        <input type="text" style = "width: 100%;" class="" id="sexo" name="sexo" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAdicionar" type="submit" style = "width: 100%;" class="form-control-submit-button">ADICIONAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+
+
+    <div id="novoEstudio" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-12">
+                <form id="formNovoEstudio" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="dono">Dono</label>
+                        <input type="text" style = "width: 100%;" class="" id="dono" name="dono" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                 
+                    <div class="form-group">
+                        <label class="" for="endereco">Endereço</label>
+                        <input type="text" style = "width: 100%;" class="" id="endereco" name="endereco" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>               
+                    <div class="form-group">
+                        <label class="" for="anoFundacao">Ano de fundação</label>
+                        <input type="number" style = "width: 100%;" class="" id="dtFundacao" name="dtFundacao" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>    
+                    <div class="form-group">
+                        <label class="" for="lucro">Lucro do ano anterior</label>
+                        <input type="text" style = "width: 100%;" class="" id="lucro" name="dtFundlucrocao" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAdicionar" type="submit" style = "width: 100%;" class="form-control-submit-button">ADICIONAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+
+    <div id="novoCinema" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-12">
+                <form id="alterarProject-5" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="localidade">Localidade</label>
+                        <input type="text" style = "width: 100%;" class="" id="localidade" name="localidade" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAdicionar" type="submit" style = "width: 100%;" class="form-control-submit-button">ADICIONAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+
+    <!-- end of project lightboxes --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    
+    <div id="novoRealizador" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            
+            <div class="col-lg-12">
+                <form id="formNovoRealizador" data-toggle="validator" data-focus="false" onSubmit=""  action = "" >
+                    <br>
+                    <div class="form-group">
+                        <label class="" for="nome">Nome</label>
+                        <input type="text" style = "width: 100%;" class="" id="nome" name="nome" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>                    
+                    <div class="form-group">
+                        <label class="" for="telefone">Número de telefone</label>
+                        <input type="text" style = "width: 100%;" class="" id="telefone" name="telefone" value = "" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label class="" for="imagem">Imagem</label>
+                        <input type="file" style = "width: 100%;" class="" id="imagem" name="imagem" required>
+                        <div class="help-block with-errors"></div>
+                    </div>  
+
+                    <p id = "Lerro" ></p>
+                    
+                    <div class="form-group">
+                        <button id = "buttonAlterar" type="submit" style = "width: 100%;" class="form-control-submit-button">ADICIONAR</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+
+
+    <!-- Footer -->
+    <div id = "footer" class="footer">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4" style = "text-align: center;">
+                    <div class="text-container">
+                        <h4>Links</h4>
+                        <ul class="list-unstyled li-space-lg white">
+                            <li>
+                                <a class="white" href="#your-link">startupguide.com</a>
+                            </li>
+                            <li>
+                                <a class="white" href="terms-conditions.html">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a class="white" href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-4" style = "text-align: center;">
+                    <div class="text-container">
+                        <h4>Ferramentas</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <a class="white" href="#your-link">businessgrowth.com</a>
+                            </li>
+                            <li>
+                               <a class="white" href="#your-link">influencers.com</a>
+                            </li>
+                            <li >
+                                <a class="white" href="#your-link">optimizer.net</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-4" style = "text-align: center;">
+                    <div class="text-container">
+                        <h4>Parcerias</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <a class="white" href="#your-link">unicorns.com</a>
+                            </li>
+                            <li>
+                                <a class="white" href="#your-link">staffmanager.com</a>
+                            </li>
+                            <li>
+                                <a class="white" href="#your-link">association.gov</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div id = "copyright" class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Trabalho realizado por:<br>
+                    Daniel Ventura,
+                    Gonçalo Dinis,
+                    Rodrigo Gomes,
+                    Tiago Vieira
+                    <p><a href="https://copyright.com" style = "text-decoration: underline;cursor:pointer;">Copyright © 2020</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script>
+        //utilizador sem premissão de admin
+        const username_db = "username";
+        const password_db = "username";
+        //utilizador com premissão de admin
+        const admin_username_db = "admin";
+        const admin_password_db = "admin";
+
+
+        if(sessionStorage.getItem("username") !== null){
+            //está logado
+            if(sessionStorage.getItem("username") == "admin"){
+                
+            }else{
+                location.replace("index.html");
+            }
+        }else{
+            location.replace("index.html");
+        }
+
+
+        function abrirItens(categoria)
+        {            
+            document.body.style.backgroundColor = "#153e52";
+            window.scrollTo(0,document.body.scrollHeight);
+            document.getElementById("itens").hidden = false; 
+            if(categoria === undefined)
+            {
+                categoria = "showAll";
+            }
+            switch(categoria)
+            {
+                case "showAll":
+                    document.getElementById("itensShowAll").click();
+                    break;
+                
+                case "filmes":
+                    document.getElementById("itensFilmes").click();
+                    break;
+
+                case "atores":
+                    document.getElementById("itensAtores").click();
+                    break;
+                case "estudios":
+                    document.getElementById("itensEstudios").click();
+                    break;
+                
+                case "realizadores":
+                    document.getElementById("itensRealizadores").click();
+                    break;
+                
+                case "cinemas":
+                    document.getElementById("itensCinemas").click();
+                    break;
+            }
+            
+
+            document.getElementById("header").hidden = true;
+            document.getElementById("intro").hidden = true;
+            document.getElementById("itensNovos").hidden = true; 
+            document.getElementById("favoritos").hidden = true; 
+            document.getElementById("categoria").hidden = true;            
+            document.getElementById("fakeAcerca").hidden = false;       
+            document.getElementById("login").hidden = true;            
+            document.getElementById("acerca").hidden = true;
+            document.getElementById("contacto").hidden = true;
+            document.getElementById("basic-2").hidden = true;
+
+            
+        }
+
+
+
+        function verificarLogin () {
+            const nome = document.getElementById("Lusername").value;
+            const password = document.getElementById("Lpassword").value;
+            if(!nome == "" || !password == ""){
+                if(nome == username_db && password == password_db)
+                {
+                    sessionStorage.setItem("username", nome);                    
+                    return true;
+                }else if(nome == admin_username_db && password == admin_password_db)
+                {
+                    sessionStorage.setItem("username", nome);                    
+                    return true;
+                }else{
+                    document.getElementById("Lerro").innerHTML = "<span style = 'color:red;' >Utilizador não encontrado...</span>";
+                    return false;
+                }
+            }else{
+                return false;
+            }
+            
+            
+        }
+
+
+        
+        function logout(){
+            sessionStorage.clear();
+            window.scrollTo(0,document.getElementById("header"));
+            location.reload();
+        }
+
+
+        function trocar(trocarPara, numero){
+            if(trocarPara == "fav")
+            {
+                switch(numero){
+                    case 1:
+                        document.getElementById("itensNFav1").hidden = true;
+                        document.getElementById("itensFav1").hidden = false;
+                        document.getElementById("favoritosNFav1").hidden = true;
+                        document.getElementById("favoritosFav1").hidden = false;
+                        sessionStorage.setItem("item1", "favorito");
+                    break;
+                    case 2:
+                        document.getElementById("itensNFav2").hidden = true;
+                        document.getElementById("itensFav2").hidden = false;
+                        document.getElementById("favoritosNFav2").hidden = true;
+                        document.getElementById("favoritosFav2").hidden = false;
+                        sessionStorage.setItem("item2", "favorito");
+                    break;
+                    case 3:
+                        document.getElementById("itensNFav3").hidden = true;
+                        document.getElementById("itensFav3").hidden = false;
+                        document.getElementById("favoritosNFav3").hidden = true;
+                        document.getElementById("favoritosFav3").hidden = false;
+                        sessionStorage.setItem("item3", "favorito");
+                    break;
+                    case 4:
+                        document.getElementById("itensNFav4").hidden = true;
+                        document.getElementById("itensFav4").hidden = false;   
+                        document.getElementById("favoritosNFav4").hidden = true;
+                        document.getElementById("favoritosFav4").hidden = false;                        
+                        sessionStorage.setItem("item4", "favorito");
+                    break;
+                    case 5:
+                        document.getElementById("itensNFav5").hidden = true;
+                        document.getElementById("itensFav5").hidden = false;
+                        document.getElementById("favoritosNFav5").hidden = true;     
+                        document.getElementById("favoritosFav5").hidden = false;                        
+                        sessionStorage.setItem("item5", "favorito");
+                    break;
+                    case 6:
+                    document.getElementById("itensNFav6").hidden = true;
+                        document.getElementById("itensFav6").hidden = false;
+                        document.getElementById("favoritosNFav6").hidden = true;     
+                        document.getElementById("favoritosFav6").hidden = false; 
+                        sessionStorage.setItem("item6", "favorito");
+                    break;
+                    case 7:
+                        document.getElementById("itensNFav7").hidden = true;
+                        document.getElementById("itensFav7").hidden = false;
+                        document.getElementById("favoritosNFav7").hidden = true;     
+                        document.getElementById("favoritosFav7").hidden = false; 
+                        sessionStorage.setItem("item7", "favorito");
+                    break;
+                    case 8:
+                        document.getElementById("itensNFav8").hidden = true;
+                        document.getElementById("itensFav8").hidden = false;
+                        document.getElementById("favoritosNFav8").hidden = true;     
+                        document.getElementById("favoritosFav8").hidden = false; 
+                        sessionStorage.setItem("item8", "favorito");
+                    break;
+                    case 9:
+                        document.getElementById("itensNFav9").hidden = true;
+                        document.getElementById("itensFav9").hidden = false;
+                        document.getElementById("favoritosNFav9").hidden = true;     
+                        document.getElementById("favoritosFav9").hidden = false; 
+                        sessionStorage.setItem("item9", "favorito");
+                    break;
+                    case 10:
+                        document.getElementById("itensNFav10").hidden = true;
+                        document.getElementById("itensFav10").hidden = false;
+                        document.getElementById("favoritosNFav10").hidden = true;     
+                        document.getElementById("favoritosFav10").hidden = false; 
+                        sessionStorage.setItem("item10", "favorito");
+                    break;
+
+                }
+            }else{
+                switch(numero){
+                    case 1:
+                        document.getElementById("itensNFav1").hidden = false;
+                        document.getElementById("itensFav1").hidden = true;
+                        document.getElementById("favoritosNFav1").hidden = false;
+                        document.getElementById("favoritosFav1").hidden = true;
+                        sessionStorage.removeItem("item1");
+                    break;
+                    case 2:
+                        document.getElementById("itensNFav2").hidden = false;
+                        document.getElementById("itensFav2").hidden = true;
+                        document.getElementById("favoritosNFav2").hidden = false;
+                        document.getElementById("favoritosFav2").hidden = true;
+                        sessionStorage.removeItem("item2");
+                    break;
+                    case 3:
+                        document.getElementById("itensNFav3").hidden = false;
+                        document.getElementById("itensFav3").hidden = true;
+                        document.getElementById("favoritosNFav3").hidden = false;
+                        document.getElementById("favoritosFav3").hidden = true;
+                        sessionStorage.removeItem("item3");
+                    break;
+                    case 4:
+                        document.getElementById("itensNFav4").hidden = false;
+                        document.getElementById("itensFav4").hidden = true;
+                        document.getElementById("favoritosNFav4").hidden = false;
+                        document.getElementById("favoritosFav4").hidden = true;
+                        sessionStorage.removeItem("item4");
+                    break;
+                    case 5:
+                        document.getElementById("itensNFav5").hidden = false;
+                        document.getElementById("itensFav5").hidden = true;
+                        document.getElementById("favoritosNFav5").hidden = false;
+                        document.getElementById("favoritosFav5").hidden = true;
+                        sessionStorage.removeItem("item5");
+                    break;
+                    case 6:
+                        document.getElementById("itensNFav6").hidden = false;
+                        document.getElementById("itensFav6").hidden = true;
+                        document.getElementById("favoritosNFav6").hidden = false;
+                        document.getElementById("favoritosFav6").hidden = true;
+                        sessionStorage.removeItem("item6");
+                    break;
+                    case 7:
+                        document.getElementById("itensNFav7").hidden = false;
+                        document.getElementById("itensFav7").hidden = true;
+                        document.getElementById("favoritosNFav7").hidden = false;
+                        document.getElementById("favoritosFav7").hidden = true;
+                        sessionStorage.removeItem("item7");
+                    break;
+                    case 8:
+                        document.getElementById("itensNFav8").hidden = false;
+                        document.getElementById("itensFav8").hidden = true;
+                        document.getElementById("favoritosNFav8").hidden = false;
+                        document.getElementById("favoritosFav8").hidden = true;
+                        sessionStorage.removeItem("item8");
+                    break;
+                    case 9:
+                        document.getElementById("itensNFav9").hidden = false;
+                        document.getElementById("itensFav9").hidden = true;
+                        document.getElementById("favoritosNFav9").hidden = false;
+                        document.getElementById("favoritosFav9").hidden = true;
+                        sessionStorage.removeItem("item9");
+                    break;
+                    case 10:
+                        document.getElementById("itensNFav10").hidden = false;
+                        document.getElementById("itensFav10").hidden = true;
+                        document.getElementById("favoritosNFav10").hidden = false;
+                        document.getElementById("favoritosFav10").hidden = true;
+                        sessionStorage.removeItem("item10");
+                    break;
+
+                }
+            }
+        }
+
+
+        function verInfo(nDaCarta){
+            let IdDaCarta = "itensAbrirProject-" + nDaCarta;
+            document.getElementById("abrirItens").click();
+            setTimeout(() => { document.getElementById(IdDaCarta).click(); }, 550);
+            
+            
+        }
+
+
+    </script>
+
+
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>

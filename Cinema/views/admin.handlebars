@@ -1,0 +1,2849 @@
+<!-- Preloader -->
+<div class="spinner-wrapper">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- end of preloader -->
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+    <!-- Text Logo - Use this if you don't have a graphic logo -->
+    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+    <!-- Image Logo -->
+    <a href="/" style="text-decoration: none;">
+        <h1 style="color:#f0f8ff;">Hollywood</h1>
+    </a>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+    </button>
+    <!-- end of mobile menu toggle button -->
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle page-scroll" href="#itens" id="navbarDropdown" role="button"
+                    aria-haspopup="true" aria-expanded="false">ITENS ADMIN</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item nav-link page-scroll" href="#user" ><span
+                            class="item-text">USERS</span></a>
+                    <div class="dropdown-items-divide-hr"></div>
+                    <a class="dropdown-item nav-link page-scroll" href="#tiposDePapeis" ><span
+                            class="item-text">TIPOS DE PAPEIS</span></a>
+                    <div class="dropdown-items-divide-hr"></div>
+                    <a class="dropdown-item nav-link page-scroll" href="#genero" ><span
+                            class="item-text">GENEROS</span></a>
+                    <div class="dropdown-items-divide-hr"></div>
+                    <a class="dropdown-item nav-link page-scroll" href="#atorPapeis"><span
+                            class="item-text">ATOR PAPEIS</span></a>
+                    <div class="dropdown-items-divide-hr"></div>
+                    <a class="dropdown-item nav-link page-scroll" href="#atorFilme" ><span
+                            class="item-text">ATOR FILME</span></a>
+                    <div class="dropdown-items-divide-hr"></div>
+                    <a class="dropdown-item nav-link page-scroll" href="#filmeGenero" ><span
+                            class="item-text">FILME GÉNERO</span></a>
+                    <div class="dropdown-items-divide-hr"></div>
+                    <a class="dropdown-item nav-link page-scroll" href="#filmeCinema" ><span
+                            class="item-text">FILME CINEMA</span></a>
+                </div>
+            </li>
+
+            <!-- Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link page-scroll" href="/" id="navbarDropdown">VOLTAR</a>
+            </li>
+            <!-- end of dropdown menu -->
+
+        </ul>
+        <span class="nav-item social-icons">
+            <span class="fa-stack">
+                <a href="#your-link">
+                    <span class="hexagon"></span>
+                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                </a>
+            </span>
+            <span class="fa-stack">
+                <a href="#your-link">
+                    <span class="hexagon"></span>
+                    <i class="fab fa-twitter fa-stack-1x"></i>
+                </a>
+            </span>
+        </span>
+    </div>
+</nav> <!-- end of navbar -->
+<!-- end of navbar -->
+    <script>
+        const realizadoresLista = [];
+        const estudiosLista = [];
+    </script>
+    {{#each realizadores}}
+    <script>
+        if(!realizadoresLista.includes("{{nome}}"))
+            realizadoresLista.push("{{nome}}");
+    </script>
+    {{/each}}
+    {{#each estudios}}
+    <script>
+        if(!estudiosLista.includes("{{nome}}"))
+            estudiosLista.push("{{nome}}");
+    </script>
+    {{/each}}
+
+<!-- Itens ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+<div id="itens" class="filter form-1" style="background-color: #153e52;">
+    <div><br><br></div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">ITENS</div>
+                <h2>Todos os itens:</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Filter -->
+                <div class="button-group filters-button-group">
+                    <a id="itensShowAll" class="button is-checked" data-filter="*"><span>MOSTRAR TODOS</span></a>
+                    <a id="itensFilmes" class="button" data-filter=".filmes"><span>FILMES</span></a>
+                    <a id="itensAtores" class="button" data-filter=".atores"><span>ATORES</span></a>
+                    <a id="itensEstudios" class="button" data-filter=".estudios"><span>ESTUDIOS</span></a>
+                    <a id="itensRealizadores" class="button" data-filter=".realizadores"><span>REALIZADORES</span></a>
+                    <a id="itensCinemas" class="button" data-filter=".cinemas"><span>CINEMAS</span></a>
+                </div> <!-- end of button group -->
+                <div class="grid">
+                    <script>
+                        contarItens = 1;
+                        let filmes = [];
+                        let atores = [];
+                        let realizadores = [];
+                        let cinemas = [];
+                        let estudios = [];
+                    </script>
+                    {{#each todosOsItens}}
+                    <script>
+                        categoriaItem = "";
+                        if ({{ categoria }} == 1) {
+                            categoriaItem = "realizadores";
+                            realizadores.push(contarItens);
+                        }else if ({{ categoria }} == 2) {
+                            categoriaItem = "estudios";
+                            estudios.push(contarItens);
+                        }else if ({{ categoria }} == 3) {
+                            categoriaItem = "cinemas";
+                            cinemas.push(contarItens);
+                        }else if ({{ categoria }} == 4) {
+                            categoriaItem = "atores";
+                            atores.push(contarItens);
+                        }else if ({{ categoria }} == 5) {
+                            categoriaItem = "filmes";
+                            filmes.push(contarItens);
+                        }
+                        document.write("<div class='element-item " + categoriaItem + "' >");
+                        document.write("<a class='popup-with-move-anim' id = 'itensAbrirProject-" + contarItens + "' href='#project-" + contarItens + "'><div class='element-item-overlay'><span>{{nomeGeral}}</span></div><img src='{{image}}' alt='alternative'></a>");
+                        document.write("</div>");
+                        contarItens = contarItens + 1;
+                    </script>
+                    {{/each}}
+                </div> <!-- end of grid -->
+                <!-- end of filter -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <br><br>
+        <div class="form-group">
+            <button type="submit" class="form-control-submit-button popup-with-move-anim"
+                id="abrirNovoFilme" href="#novoFilme" style="width:15%;">Novo Filme</button>
+            <button type="submit" class="form-control-submit-button popup-with-move-anim"
+                id="abrirNovoAtor" href="#novoAtor" style="width:15%;margin-left:5%;">Novo Ator</button>
+            <button type="submit" class="form-control-submit-button popup-with-move-anim"
+                id="abrirNovoEstudio" href="#novoEstudio" style="width:15%;margin-left:5%;">Novo Estúdio</button>
+            <button type="submit" class="form-control-submit-button popup-with-move-anim"
+                id="abrirNovoRealizador" href="#novoRealizador" style="width:15%;margin-left:5%;">Novo
+                Realizador</button>
+            <button type="submit" class="form-control-submit-button popup-with-move-anim"
+                id="abrirNovoCinema" href="#novoCinema" style="width:15%;margin-left:5%;">Novo Cinemas</button>
+        </div>
+    </div> <!-- end of container -->
+
+</div> <!-- end of filter -->
+<!-- end of projects -->
+
+<!----------------------ITENS FILMES--------------------->
+
+<script>
+    let i = 0;
+    let iFilmes = 0;
+    let filmesRenderizados = [];
+</script>
+{{#each filmes}}
+
+<script>
+    idDoFilme = parseInt({{ idFilme }});
+    if (filmesRenderizados.includes(idDoFilme)) {
+
+    } else {
+        filmesRenderizados.push(idDoFilme);
+        document.write("<div id='project-" + filmes[iFilmes] + "' class='lightbox-basic zoom-anim-dialog mfp-hide'>");
+        document.write("<div class='row'>");
+        document.write("<button title='Close (Esc)' type='button' class='mfp-close x-button'>×</button>");
+        document.write("<div class='col-lg-8'>");
+        document.write("<img class='img-fluid' src='{{image}}' alt='alternative'>");
+        document.write("</div> <!-- end of col -->");
+        document.write("<div class='col-lg-4'>");
+        document.write("<form id='alterarProject-" + filmes[iFilmes] + "' data-toggle='validator' data-focus='false' onSubmit='return false'>");
+        document.write("<label class='' for='chavePrimaria'></label><input type='text' style = 'width: 100%;' class='chavePrimariaFilmes' name='chavePrimaria' value = '{{idFilme}}' hidden = 'hidden'><div class='help-block with-errors'></div>");
+        document.write("<label class='' for='nomeOriginal'>Nome Original</label><input type='text' style = 'width: 100%;' class='nomeOriginalFilmes' name='nomeOriginal' value = '{{tituloOriginal}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='nomePortugues'>Nome Português </label><input type='text' style = 'width: 100%;' class='nomePortuguesFilmes' name='nomePortugues' value = '{{tituloPortugues}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><hr class='line-heading'><br>");
+        document.write("<br><label class='' for='sinopse'>Sinopse</label><textarea style = 'width: 100%;' class='sinopseFilmes' name='sinopse' rows = '5' required>{{sinopse}}</textarea> <div class=help-block with-errors></div>");
+
+        document.write("<br><label class='' for='realizador'>Realizador</label>");
+        document.write("<select name='realizador' class='realizadorFilmes' style='width: 100%;'' required>");
+        i = 0;
+        while(realizadoresLista[i] != undefined)
+        {
+            if("{{realizador}}" == realizadoresLista[i]){
+                document.write("<option selected='selected' value='" + realizadoresLista[i] + "'>" + realizadoresLista[i] + "</option>");
+            }else{
+                document.write("<option value='" + realizadoresLista[i] + "'>" + realizadoresLista[i] + "</option>");
+            }
+            
+            i = i + 1;
+        }
+        document.write("</select><br>");
+        
+        document.write("<br><label class='' for='estudio'>Estúdio</label>");
+        document.write("<select name='estudio' class='estudioFilmes' style='width: 100%;'' required>");
+        i = 0;
+        while(estudiosLista[i] != undefined)
+        {
+            if("{{nomeEstudio}}" == estudiosLista[i]){
+                document.write("<option selected='selected' value='" + estudiosLista[i] + "'>" + estudiosLista[i] + "</option>");
+            }else{
+                document.write("<option value='" + estudiosLista[i] + "'>" + estudiosLista[i] + "</option>");
+            }   
+            i = i + 1;
+        }
+        document.write("</select><br>");
+
+        document.write("<br><label class='' for='duracaoDasFilmagens'>Duração das filmagens</label><input type='number' style = 'width: 100%;' class='duracaoDasFilmagensFilmes'  name='duracaoDasFilmagens' value = '{{duracaoDasFilmagens}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='anoLancamento'>Ano lançamento</label><input type='number' style = 'width: 100%;' class='anoLancamentoFilmes'  name='anoLancamento' value = '{{anoLancamento}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='custoTotal'>Custo total</label><input type='number' style = 'width: 100%;' class='custoTotalFilmes'  name='custoTotal' value = '{{custoTotal}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><div class='form-group'><label class='' for='imagem'>Imagem</label><input type='text' style = 'width: 100%;' class='imagemFilmes' name='imagem' value = '{{image}}' required><div class='help-block with-errors'></div></div>");
+        document.write("<br><div class='form-group'><button id = 'buttonAlterar" + filmes[iFilmes] + "' type='submit' style = 'width: 50%;' class='form-control-alterar-button buttonAlterarFilmes'>ALTERAR</button><button id = 'buttonEliminar" + filmes[iFilmes] + "' type='button' style = 'margin-left:10%;width: 30%;' class='form-control-delete-button buttonEliminarFilmes' value = '{{idFilme}}'>ELIMINAR</button></div>");
+        document.write("</form>");
+        document.write("</div> <!-- end of col -->");
+        document.write("</div> <!-- end of row -->");
+        document.write("</div>");
+        iFilmes = iFilmes + 1;
+    }
+
+</script>
+
+
+{{/each}}
+
+
+
+<!-----------------------REALIZADORES---------------------->
+<script>
+    let iRealizadores = 0;
+    let realizadoresRenderizados = [];
+</script>
+<!-- Lightbox -->
+
+{{#each realizadores}}
+<script>
+    nomeDoRealizador = "{{nome}}";
+    if (realizadoresRenderizados.includes(nomeDoRealizador)) {
+
+    } else {
+        realizadoresRenderizados.push(nomeDoRealizador);
+        document.write("<div id='project-" + realizadores[iRealizadores] + "' class='lightbox-basic zoom-anim-dialog mfp-hide'>");
+        document.write("<div class='row'>");
+        document.write("<button title='Close (Esc)' type='button' class='mfp-close x-button'>×</button>");
+        document.write("<div class='col-lg-8'>");
+        document.write("<img class='img-fluid' src='{{image}}' alt='alternative'>");
+        document.write("</div> <!-- end of col -->");
+        document.write("<div class='col-lg-4'>");
+        document.write("<form id='alterarProject-" + realizadores[iRealizadores] + "' data-toggle='validator' data-focus='false' onSubmit='return false'>");
+        document.write("<label class='' for='chavePrimaria'></label><input type='text' style = 'width: 100%;' class='chavePrimariaRealizadores' name='chavePrimaria' value = '{{nome}}' hidden = 'hidden'><div class='help-block with-errors'></div>");
+        document.write("<label class='' for='nome'>Nome</label><input type='text' style = 'width: 100%;' class='nomeRealizadores' name='nome' value = '{{nome}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><hr class='line-heading'><br>");
+        document.write("<br><label class='' for='telefone'>Nº de telefone</label><input type='text' style = 'width: 100%;' class='telefoneRealizadores' name='telefone' value = '{{telefone}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><div class='form-group'><label class='' for='imagem'>Imagem</label><input type='text' style = 'width: 100%;' class='imagemRealizadores' name='imagem' value = '{{image}}' required><div class='help-block with-errors'></div></div>");
+        document.write("<br><div class='form-group'><button id = 'buttonAlterar" + realizadores[iRealizadores] + "' type='submit' style = 'width: 50%;' class='form-control-alterar-button buttonAlterarRealizadores'>ALTERAR</button><button id = 'buttonEliminar" + realizadores[iRealizadores] + "' type='button' style = 'margin-left:10%;width: 30%;' class='form-control-delete-button buttonEliminarRealizadores' value = '{{nome}}'>ELIMINAR</button></div>");
+        document.write("</form>");
+        document.write("</div> <!-- end of col -->");
+        document.write("</div> <!-- end of row -->");
+        document.write("</div>");
+        iRealizadores = iRealizadores + 1;
+    }        
+</script>
+{{/each}}
+
+
+
+<!---------------------------ESTUDIOS-------------------------->
+
+<script>
+    let iEstudios = 0;
+    let estudiosRenderizados = [];
+</script>
+
+{{#each estudios}}
+<script>
+    nomeDoEstudio = "{{nome}}";
+    if (estudiosRenderizados.includes(nomeDoEstudio)) {
+
+    } else {
+        estudiosRenderizados.push(nomeDoEstudio);
+        document.write("<div id='project-" + estudios[iEstudios] + "' class='lightbox-basic zoom-anim-dialog mfp-hide'>");
+        document.write("<div class='row'>");
+        document.write("<button title='Close (Esc)' type='button' class='mfp-close x-button'>×</button>");
+        document.write("<div class='col-lg-8'>");
+        document.write("<img class='img-fluid' src='{{image}}' alt='alternative'>");
+        document.write("</div> <!-- end of col -->");
+        document.write("<div class='col-lg-4'>");
+        document.write("<form id='alterarProject-" + estudios[iEstudios] + "' data-toggle='validator' data-focus='false' onSubmit=''  action = ''>");
+        document.write("<label class='' for='chavePrimaria'></label><input type='text' style = 'width: 100%;' class='chavePrimariaEstudios' name='chavePrimaria' value = '{{nome}}' hidden = 'hidden'><div class='help-block with-errors'></div>");
+        document.write("<label class='' for='nome'>Nome</label><input type='text' style = 'width: 100%;' class='nomeEstudios' name='nome' value = '{{nome}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><hr class='line-heading'>");
+        document.write("<br><label class='' for='dono'>Dono</label><input type='text' style = 'width: 100%;' class='donoEstudios' name='dono' value = '{{dono}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='morada'>Endereço</label><input type='text' style = 'width: 100%;' class='moradaEstudios' name='morada' value = '{{morada}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='dataFund'>Ano de fundação</label><input type='text' style = 'width: 100%;' class='dataFundEstudios' name='dataFund' value = '{{dataFund}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='lucroAnoAnterior'>Lucro do ano anterior</label><input type='text' style = 'width: 100%;' class='lucroAnoAnteriorEstudios' name='lucroAnoAnterior' value = '{{lucroAnoAnterior}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><div class='form-group'><label class='' for='imagem'>Imagem</label><input type='text' style = 'width: 100%;' class='imagemEstudios' name='imagem' value = '{{image}}' required><div class='help-block with-errors'></div></div>");
+        document.write("<br><div class='form-group'><button id = 'buttonAlterar" + estudios[iEstudios] + "' type='submit' style = 'width: 50%;' class='form-control-alterar-button buttonAlterarEstudios'>ALTERAR</button><button id = 'buttonEliminar" + estudios[iEstudios] + "' type='button' style = 'margin-left:10%;width: 30%;' class='form-control-delete-button buttonEliminarEstudios' value = '{{nome}}'>ELIMINAR</button></div>");
+        document.write("</form>");
+        document.write("</div> <!-- end of col -->");
+        document.write("</div> <!-- end of row -->");
+        document.write("</div>");
+        iEstudios = iEstudios + 1;
+    }
+</script>
+{{/each}}
+
+
+<!---------------------------CINEMAS-------------------------->
+
+<script>
+    let iCinemas = 0;
+    let cinemasRenderizados = [];
+</script>
+
+<!-- Lightbox -->
+{{#each cinemas}}
+<script>
+    nomeDoCinema = "{{nomeCinema}}";
+    localidadeDoCinema = "{{localidade}}";
+    idCinema = nomeDoCinema + " " + localidadeDoCinema;
+    if (estudiosRenderizados.includes(idCinema)) {
+
+    } else {
+        estudiosRenderizados.push(idCinema);
+        document.write("<div id='project-" + cinemas[iCinemas] + "' class='lightbox-basic zoom-anim-dialog mfp-hide'>");
+        document.write("<div class='row'>");
+        document.write("<button title='Close (Esc)' type='button' class='mfp-close x-button'>×</button>");
+        document.write("<div class='col-lg-8'>");
+        document.write("<img class='img-fluid' src='{{image}}' alt='alternative'>");
+        document.write("</div> <!-- end of col -->");
+        document.write("<div class='col-lg-4'>");
+        document.write("<form id='alterarProject-" + cinemas[iCinemas] + "' data-toggle='validator' data-focus='false' onSubmit='return false'  >");
+        document.write("<label class='' for='chavePrimaria'></label><input type='text' style = 'width: 100%;' class='chavePrimariaCinemas' name='chavePrimaria' value = '{{nomeCinema}}|{{localidade}}' hidden = 'hidden'><div class='help-block with-errors'></div>");
+        document.write("<label class='' for='nomeCinema'>Nome</label><input type='text' style = 'width: 100%;' class='nomeCinemaCinemas' name='nomeCinema' value = '{{nomeCinema}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><hr class='line-heading'>");
+        document.write("<label class='' for='localidade'>Localidade</label><input type='text' style = 'width: 100%;' class='localidadeCinemas' name='localidade' value = '{{localidade}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><div class='form-group'><label class='' for='imagem'>Imagem</label><input type='text' style = 'width: 100%;' class='imagemCinemas' name='imagem' value = '{{image}}' required><div class='help-block with-errors'></div></div>");
+        document.write("<br><div class='form-group'><button id = 'buttonAlterar" + cinemas[iCinemas] + "' type='submit' style = 'width: 50%;' class='form-control-alterar-button buttonAlterarCinemas'>ALTERAR</button><button id = 'buttonEliminar" + cinemas[iCinemas] + "' type='button' style = 'margin-left:10%;width: 30%;' class='form-control-delete-button buttonEliminarCinemas' value = '{{nomeCinema}}|{{localidade}}'>ELIMINAR</button></div>");
+        document.write("</form>");
+        document.write("</div> <!-- end of col -->");
+        document.write("</div> <!-- end of row -->");
+        document.write("</div>");
+        iCinemas = iCinemas + 1;
+    }
+</script>
+{{/each}}
+
+
+<!---------------------------ATORES-------------------------->
+
+<script>
+    let iAtores = 0;
+    let atoresRenderizados = [];
+    let sexo = "";
+</script>
+{{#each atores}}
+
+<script>
+    nIdentidadeDoAtor = parseInt("{{nIdentidade}}");
+    if (atoresRenderizados.includes(nIdentidadeDoAtor)) {
+
+    } else {
+        atoresRenderizados.push(nIdentidadeDoAtor);
+        document.write("<div id='project-" + atores[iAtores] + "' class='lightbox-basic zoom-anim-dialog mfp-hide'>");
+        document.write("<div class='row'>");
+        document.write("<button title='Close (Esc)' type='button' class='mfp-close x-button'>×</button>");
+        document.write("<div class='col-lg-8'>");
+        document.write("<img class='img-fluid' src='{{image}}' alt='alternative'>");
+        document.write("</div> <!-- end of col -->");
+        document.write("<div class='col-lg-4'>");
+        document.write("<form id='alterarProject-" + atores[iAtores] + "' data-toggle='validator' data-focus='false' onSubmit='return false' >");
+        document.write("<label class='' for='chavePrimaria'></label><input type='text' style = 'width: 100%;' class='chavePrimariaAtores' name='chavePrimaria' value = '{{nIdentidade}}' hidden = 'hidden'><div class='help-block with-errors'></div>");
+        document.write("<label class='' for='nome'>Nome</label><input type='text' style = 'width: 100%;' class='nomeAtores' name='nome' value = '{{nome}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><hr class='line-heading'>");
+        document.write("<br><label class='' for='nIdentidade'>Número de Identidade</label><input type='text' style = 'width: 100%;' class='nIdentidadeAtores' name='nIdentidade' value = '{{nIdentidade}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='segurancaSocial'>Segurança Social</label><input type='text' style = 'width: 100%;' class='segurancaSocialAtores' name='segurancaSocial' value = '{{segurancaSocial}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='nacionalidade'>Nacionalidade</label><input type='text' style = 'width: 100%;' class='nacionalidadeAtores' name='nacionalidade' value = '{{nacionalidade}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='dataNasc'>Data de nascimento</label><input type='date' style = 'width: 100%;' class='dataNascAtores' name='dataNasc' value = '{{dataNasc}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='telefone'>Nº de telefone</label><input type='text' style = 'width: 100%;' class='telefoneAtores' name='telefone' value = '{{telefone}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><label class='' for='sexo'>Sexo</label>");
+
+        document.write("<select name='sexo' class = 'sexoAtores' style='width: 100%;' required>");
+        if("{{sexo}}" == "M"){
+            document.write("<option selected = 'selected' value='M'>Masculino</option>");
+            document.write("<option value='F'>Feminino</option>");
+        }else{
+            document.write("<option value='M'>Masculino</option>");
+            document.write("<option selected = 'selected' value='F'>Feminino</option>");
+        }
+        document.write("</select><br>");
+
+        document.write("<br><label class='' for='email'>Email</label><input type='text' style = 'width: 100%;' class='emailAtores' name='email' value = '{{email}}' required><div class='help-block with-errors'></div>");
+        document.write("<br><div class='form-group'><label class='' for='imagem'>Imagem</label><input type='text' style = 'width: 100%;' class='imagemAtores' name='imagem' value = '{{image}}' required><div class='help-block with-errors'></div></div>");
+        document.write("<br><div class='form-group'><button id = 'buttonAlterar" + atores[iAtores] + "' type='submit' style = 'width: 50%;' class='form-control-alterar-button buttonAlterarAtores'>ALTERAR</button><button id = 'buttonEliminar" + atores[iAtores] + "' type='button' style = 'margin-left:10%;width: 30%;' class='form-control-delete-button buttonEliminarAtores' value = '{{nIdentidade}}'>ELIMINAR</button></div>");
+        document.write("</form>");
+        document.write("</div> <!-- end of col -->");
+        document.write("</div> <!-- end of row -->");
+        document.write("</div>");
+        iAtores = iAtores + 1;
+    }
+</script>
+{{/each}}
+
+
+<div id="novoFilme" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoFilme" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="nomeOriginal">Nome Original</label>
+                    <input type="text" style="width: 100%;" class="" id="nomeOriginal" name="nomeOriginal" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="nomePortugues">Nome Português</label>
+                    <input type="text" style="width: 100%;" class="" id="nomePortugues" name="nomePortugues" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="sinopse">Sinopse</label>
+                    <textarea style="width: 100%;" class="" id="sinopse" name="sinopse" rows="5" required> </textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="realizador">Realizador</label>
+                    <select name="realizador" id="realizador" style="width: 100%;" required>
+                        <script>
+                            let I = "";
+                        </script>
+                        {{#each realizadores}}
+                        <script>
+                            if (I != "{{nome}}")
+                                document.write("<option value='{{nome}}'>{{nome}}</option>");
+                            I = "{{nome}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="estudio">Estudio:</label>
+                    <select name="estudio" id="estudio" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each estudios}}
+                        <script>
+                            if (I != "{{nome}}")
+                                document.write("<option value='{{nome}}'>{{nome}}</option>");
+                            I = "{{nome}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="duracaoDasFilmagens">Duração das Filmagens (meses)</label>
+                    <input type="number" style="width: 100%;" class="" id="duracaoDasFilmagens"
+                        name="duracaoDasFilmagens" value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="anoLancamento">Ano Lançamento</label>
+                    <input type="number" style="width: 100%;" class="" id="anoLancamento" name="anoLancamento" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="custoTotal">Custo total</label>
+                    <input type="number" style="width: 100%;" class="" id="custoTotal" name="custoTotal" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="imagem">Imagem</label>
+                    <input type="text" style="width: 100%;" class="" id="imagemFilme" name="imagem" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <p id="NFmsgSubmit"></p>
+
+                <div class="form-group">
+                    <button id="novoFilmeSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+<div id="novoAtor" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoAtor" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="nome">Nome</label>
+                    <input type="text" style="width: 100%;" class="" id="nomeAtor" name="nomeAtor" value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="nIdentidade">Nº de identidade</label>
+                    <input type="text" style="width: 100%;" class="" id="nIdentidade" name="nIdentidade" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="segSocial">Nº de Segurança Social</label>
+                    <input type="text" style="width: 100%;" class="" id="segSocial" name="segSocial" value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="nacionalidade">Nacionalidade</label>
+                    <input type="text" style="width: 100%;" class="" id="nacionalidade" name="nacionalidade" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="dataDeNascimento">Data de nascimento</label>
+                    <input type="date" style="width: 100%;" class="" id="dataDeNascimento" name="dataDeNascimento"
+                        value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="telefone">Nº de telefone</label>
+                    <input type="text" style="width: 100%;" class="" id="telefoneAtor" name="telefoneAtor" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="sexo">Sexo</label>
+                    <select name="sexo" id="sexo" style="width: 100%;" required>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="email">Email</label>
+                    <input type="email" style="width: 100%;" class="" id="email" name="email" value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="imagem">Imagem</label>
+                    <input type="text" style="width: 100%;" class="" id="imagemAtor" name="imagem" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <p id="NAmsgSubmit"></p>
+
+                <div class="form-group">
+                    <button id="novoAtorSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+
+<div id="novoEstudio" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoEstudio" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="nome">Nome</label>
+                    <input type="text" style="width: 100%;" class="" id="nomeEstudio" name="nomeEstudio" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="dono">Dono</label>
+                    <input type="text" style="width: 100%;" class="" id="dono" name="dono" value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="endereco">Endereço</label>
+                    <input type="text" style="width: 100%;" class="" id="endereco" name="endereco" value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="anoFundacao">Ano de fundação</label>
+                    <input type="number" style="width: 100%;" class="" id="dtFundacao" name="dtFundacao" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="lucro">Lucro do ano anterior</label>
+                    <input type="text" style="width: 100%;" class="" id="lucro" name="dtFundlucrocao" value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="imagem">Imagem</label>
+                    <input type="text" style="width: 100%;" class="" id="imagemEstudio" name="imagem" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <p id="NEmsgSubmit"></p>
+
+                <div class="form-group">
+                    <button id="novoEstudioSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+<div id="novoCinema" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoCinema" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="nome">Nome</label>
+                    <input type="text" style="width: 100%;" class="" id="nomeCinema" name="nomeCinema" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="localidade">Localidade</label>
+                    <input type="text" style="width: 100%;" class="" id="localidade" name="localidade" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="imagem">Imagem</label>
+                    <input type="text" style="width: 100%;" class="" id="imagemCinema" name="imagem" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <p id="NCmsgSubmit"></p>
+
+                <div class="form-group">
+                    <button id="novoCinemaSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+<!-- end of project lightboxes --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<div id="novoRealizador" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+
+        <div class="col-lg-12">
+            <form id="formNovoRealizador" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="nome">Nome</label>
+                    <input type="text" style="width: 100%;" class="" id="nomeRealizador" name="nomeRealizador" value=""
+                        required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="telefone">Número de telefone</label>
+                    <input type="text" style="width: 100%;" class="" id="telefoneRealizador" name="telefoneRealizador"
+                        value="" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="imagem">Imagem</label>
+                    <input type="text" style="width: 100%;" class="" id="imagemRealizador" name="imagem" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <p id="NAmsgSubmit"></p>
+
+                <div class="form-group">
+                    <button id="novoRealizadorSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+
+<div class = "form-2" id = 'user' >
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class = "text-container">
+                    <div class = "section-title">ZONA USER</div>
+                    <h2>Alterar user:</h2>
+                    <p>Alterar users com ou sem privilegios de administração!</p>
+                    <br>
+                    <table style = 'width: 100%;text-align:center;' >
+                        {{#each users}}
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input usernameUsers' value = '{{username}}' name='Uusername' required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="Uusername">Username</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input emailUsers' value = '{{email}}' name='Uemail' required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="Uemail">Email</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<select class='form-control-input privUsers' name='Upriv' required>");
+                                            if("{{admin}}" == "1")
+                                            {
+                                                document.write("<option  selected = 'selected' value = '1' >Admin</option>");
+                                                document.write("<option value = '0' >User</option>");
+                                            }else{
+                                                document.write("<option value = '1' >Admin</option>");
+                                                document.write("<option selected = 'selected' value = '0' >User</option>");
+                                            }
+                                            document.write("</select>");
+                                        </script>
+                                        
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="Upriv">Privilegios</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <script>
+                                        document.write("<button type='submit' style = ' vertical-align:2.76em;width: 50%;' class='form-control-alterar-button  alterarUsers' value = '{{username}}' >ALTERAR</button>");
+                                    </script>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </table>
+                    
+                <div class="form-message">
+                    <div id="UAmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "form-3" id = 'tiposDePapeis'>
+    <br><br><br><br>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class = "text-container">
+                    <div class = "section-title">ZONA TIPOS DE PAPEIS</div>
+                    <h2>Adicionar ou eliminar tipos de papeis:</h2>
+                    <p>Adicione ou elimine tipos de papeis!</p>
+                    <br>
+                    <table style = 'width: 100%;text-align:center;' >
+                        {{#each tiposDePapel}}
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input nomeTiposDePapel' value = '{{tiposDePapel}}' name='nome' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="nome">Tipo de papel</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <script>
+                                        document.write("<button type='submit' style = ' vertical-align:2.76em;width: 50%;' class='form-control-delete-button  eliminarTiposDePapel' value = '{{idTiposDePapel}}'>ELIMINAR</button>");
+                                    </script>
+                                </td>
+                            </tr>
+                        {{/each}}
+                            <tr>
+                                <td colspan = '1' ><br>
+                                    <button type='button' style = ' vertical-align:2.76em;width: 50%;' class='form-control-submit-button popup-with-move-anim' href="#novoTipoDePapel" id = 'abrirNovoTipoDePapel' >NOVO TIPO DE PAPEL</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+</div>
+
+
+<div class = "form-1" id = 'genero'>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class = "text-container">
+                    <div class = "section-title">Género</div>
+                    <h2>Adicionar ou eliminar géneros:</h2>
+                    <p style='color:white;' >Adicione ou elimine géneros!</p>
+                    <br>
+                    <table style = 'width: 100%;text-align:center;' >
+                        {{#each generos}}
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input nomeGenero' value = '{{genero}}' name='nome' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="nome">Género</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <script>
+                                        document.write("<button type='submit' style = ' vertical-align:2.76em;width: 50%;' class='form-control-delete-button  eliminarGeneros' value = '{{idGenero}}'>ELIMINAR</button>");
+                                    </script>
+                                </td>
+                            </tr>
+                        {{/each}}
+                            <tr>
+                                <td colspan = '1' ><br>
+                                    <button type='button' style = 'vertical-align:2.76em;width: 50%;' class='form-control-submit-button popup-with-move-anim' href="#novoGenero" id = 'abrirNovoGenero' >NOVO GÉNERO</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "form-2" id = 'atorPapeis'>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class = "text-container">
+                    <div class = "section-title">Papeis de cada ator</div>
+                    <h2>Adicionar ou eliminar os tipos de papeis de cada ator:</h2>
+                    <p >Adicione ou elimine tipos de papeis de cada ator!</p>
+                    <br>
+                    <table style = 'width: 100%;text-align:center;' >
+                        {{#each atorPapeis}}
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input atorAtorPapeis' value = '{{nome}}' name='nome' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="nome">Ator</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input papelAtorPapeis' value = '{{papel}}' name='papel' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="papel">Tipo de papel</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <script>
+                                        document.write("<button type='submit' style = ' vertical-align:2.76em;width: 50%;' class='form-control-delete-button  eliminarAtorPapeis' value = '{{ator}}|{{tiposDePapel}}'>ELIMINAR</button>");
+                                    </script>
+                                </td>
+                            </tr>
+                        {{/each}}
+                            <tr>
+                                <td colspan = '2' ><br>
+                                    <button type='button' style = 'vertical-align:2.76em;width: 50%;' class='form-control-submit-button popup-with-move-anim' href="#novoAtorPapeis" id = 'abrirNovoAtorPapeis' >NOVO PAPEL A UM ATOR</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "form-3" id = 'atorFilme'>
+    <br><br><br><br><br><br>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class = "text-container">
+                    <div class = "section-title">Atores dos filmes</div>
+                    <h2>Adicionar ou eliminar os atores de cada filme:</h2>
+                    <p >Adicione ou elimine atores de cada filme!</p>
+                    <br>
+                    <table style = 'width: 100%;text-align:center;' >
+                        {{#each atorFilme}}
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input atorAtorFilme' value = '{{nome}}' name='nome' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="nome">Ator</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input personagemAtorFilme' value = '{{nomePersonagem}}' name='personagem' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="personagem">Personagem</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input filmeAtorFilme' value = '{{tituloOriginal}}' name='filme' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="filme">Filme</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <script>
+                                        document.write("<button type='submit' style = ' vertical-align:2.76em;width: 50%;' class='form-control-delete-button  eliminarAtorFilme' value = '{{ator}}|{{idFilme}}'>ELIMINAR</button>");
+                                    </script>
+                                </td>
+                            </tr>
+                        {{/each}}
+                            <tr>
+                                <td colspan = '3' ><br>
+                                    <button type='button' style = 'vertical-align:2.76em;width: 50%;' class='form-control-submit-button popup-with-move-anim' href="#novoAtorFilme" id = 'abrirNovoAtorFilme' >NOVO ATOR A UM FILME</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br><br><br><br><br><br>
+</div>
+
+<div class = "form-1" id = 'filmeGenero'>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class = "text-container">
+                    <div class = "section-title">Géneros de cada filme</div>
+                    <h2>Adicionar ou eliminar os géneros de cada filme:</h2>
+                    <p style = 'color:white;' >Adicione ou elimine géneros de cada filme!</p>
+                    <br>
+                    <table style = 'width: 100%;text-align:center;' >
+                        {{#each filmeGenero}}
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input filmeFilmeGenero' value = '{{tituloOriginal}}' name='nome' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="nome">Filme</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input generoFilmeGenero' value = '{{genero}}' name='genero' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="genero">Género</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <script>
+                                        document.write("<button type='submit' style = ' vertical-align:2.76em;width: 50%;' class='form-control-delete-button  eliminarFilmeGenero' value = '{{idFilme}}|{{idGenero}}'>ELIMINAR</button>");
+                                    </script>
+                                </td>
+                            </tr>
+                        {{/each}}
+                            <tr>
+                                <td colspan = '2' ><br>
+                                    <button type='button' style = 'vertical-align:2.76em;width: 50%;' class='form-control-submit-button popup-with-move-anim' href="#novoFilmeGenero" id = 'abrirNovoFilmeGenero' >NOVO GÉNERO A UM FILME</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class = "form-2" id = 'filmeCinema'>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class = "text-container">
+                    <div class = "section-title">Filmes de cada Cinema</div>
+                    <h2>Adicionar ou eliminar os filmes de cada cinema:</h2>
+                    <p style = 'color:white;' >Adicione ou elimine os filmes de cada cinema!</p>
+                    <br>
+                    <table style = 'width: 100%;text-align:center;' >
+                        {{#each filmeCinema}}
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input cinemaFilmeCinema' value = '{{nomeCinema}} - {{localidade}}' name='cinema' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="cinema">Cinema</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <script>
+                                            document.write("<input type='text' class='form-control-input filmeFilmeCinema' value = '{{tituloOriginal}}' name='filme' disabled required>");
+                                        </script>
+                                        <label class="label-control" style = "top: 0.125rem;opacity: 1;font-size: 0.75rem;font-weight: 500;" for="filme">Filme</label>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <script>
+                                        document.write("<button type='submit' style = ' vertical-align:2.76em;width: 50%;' class='form-control-delete-button  eliminarFilmeCinema' value = '{{idFilme}}|{{nomeCinema}}|{{localidade}}'>ELIMINAR</button>");
+                                    </script>
+                                </td>
+                            </tr>
+                        {{/each}}
+                            <tr>
+                                <td colspan = '2' ><br>
+                                    <button type='button' style = 'vertical-align:2.76em;width: 50%;' class='form-control-submit-button popup-with-move-anim' href="#novoFilmeCinema" id = 'abrirNovoFilmeCinema' >NOVO FILME A UM CINEMA</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="novoTipoDePapel" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoTipoDePapel" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="novoTipoDePapelNome">Tipo de papel</label>
+                    <input type="text" style="width: 100%;" class="" id="novoTipoDePapelNome" name="novoTipoDePapelNome" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                
+                <div class="form-group">
+                    <button id="novoTipoDePapelSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="TdpmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+
+<div id="novoGenero" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoGenero" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="novoGeneroNome">Género</label>
+                    <input type="text" style="width: 100%;" class="" id="novoGeneroNome" name="novoGeneroNome" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <button id="novoGeneroSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="GmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+
+<div id="novoAtorPapeis" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoAtorPapeis" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="novoAtorPapeisAtor">Ator:</label>
+                    <select name="novoAtorPapeisAtor" id="novoAtorPapeisAtor" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each atores}}
+                        <script>
+                            if (I != "{{nIdentidade}}")
+                                document.write("<option value='{{nIdentidade}}'>{{nome}}</option>");
+                            I = "{{nIdentidade}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="" for="novoAtorPapeisPapeis">Papeis:</label>
+                    <select name="novoAtorPapeisPapeis" id="novoAtorPapeisPapeis" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each tiposDePapel}}
+                        <script>
+                            if (I != "{{idTiposDePapel}}")
+                                document.write("<option value='{{idTiposDePapel}}'>{{tiposDePapel}}</option>");
+                            I = "{{idTiposDePapelme}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <button id="novoAtorPapeisSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="ApmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+
+<div id="novoAtorFilme" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoAtorFilme" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="novoAtorFilmeAtor">Ator:</label>
+                    <select name="novoAtorFilmeAtor" id="novoAtorFilmeAtor" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each atores}}
+                        <script>
+                            if (I != "{{nIdentidade}}")
+                                document.write("<option value='{{nIdentidade}}'>{{nome}}</option>");
+                            I = "{{nIdentidade}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+                                
+                <div class="form-group">
+                    <label class="" for="novoAtorFilmePersonagem">Personagem:</label>
+                    <input type="text" style="width: 100%;" class="" id="novoAtorFilmePersonagem" name="novoAtorFilmePersonagem" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="novoAtorFilmeFilme">Filme:</label>
+                    <select name="novoAtorFilmeFilme" id="novoAtorFilmeFilme" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each filmes}}
+                        <script>
+                            if (I != "{{idFilme}}")
+                                document.write("<option value='{{idFilme}}'>{{tituloOriginal}}</option>");
+                            I = "{{idFilme}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <button id="novoAtorFilmeSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="AfmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+
+<div id="novoFilmeGenero" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoFilmeGenero" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="novoFilmeFilmeGenero">Filme:</label>
+                    <select name="novoFilmeFilmeGenero" id="novoFilmeFilmeGenero" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each filmes}}
+                        <script>
+                            if (I != "{{idFilme}}")
+                                document.write("<option value='{{idFilme}}'>{{tituloOriginal}}</option>");
+                            I = "{{idFilme}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="novoGeneroFilmeGenero">Género:</label>
+                    <select name="novoGeneroFilmeGenero" id="novoGeneroFilmeGenero" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each generos}}
+                        <script>
+                            if (I != "{{idGenero}}")
+                                document.write("<option value='{{idGenero}}'>{{genero}}</option>");
+                            I = "{{idGenero}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <button id="novoFilmeGeneroSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="FgmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+
+<div id="novoFilmeCinema" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="row">
+        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+        <div class="col-lg-12">
+            <form id="formNovoFilmeCinema" data-toggle="validator" data-focus="false" onSubmit="return false">
+                <br>
+                <div class="form-group">
+                    <label class="" for="novoCinemaFilmeCinema">Cinema:</label>
+                    <select name="novoCinemaFilmeCinema" id="novoCinemaFilmeCinema" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each cinemas}}
+                        <script>
+                            if (I != "{{nomeCinema}}|{{localidade}}")
+                                document.write("<option value='{{nomeCinema}}|{{localidade}}'>{{nomeCinema}} - {{localidade}}</option>");
+                            I = "{{nomeCinema}}|{{localidade}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="novoFilmeFilmeCinema">Filme:</label>
+                    <select name="novoFilmeFilmeCinema" id="novoFilmeFilmeCinema" style="width: 100%;" required>
+                        <script>
+                            I = "";
+                        </script>
+                        {{#each filmes}}
+                        <script>
+                            if (I != "{{idFilme}}")
+                                document.write("<option value='{{idFilme}}'>{{tituloOriginal}}</option>");
+                            I = "{{idFilme}}";
+                        </script>
+                        {{/each}}
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <button id="novoFilmeCinemaSubmit" type="submit" style="width: 100%;"
+                        class="form-control-submit-button">ADICIONAR</button>
+                </div>
+                <div class="form-message">
+                    <div id="FcmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+        </div> <!-- end of col -->
+    </div> <!-- end of row -->
+</div> <!-- end of lightbox-basic -->
+
+<!-- Footer -->
+<div id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4" style="text-align: center;">
+                <div class="text-container">
+                    <h4>Links</h4>
+                    <ul class="list-unstyled li-space-lg white">
+                        <li>
+                            <a class="white" href="#your-link">startupguide.com</a>
+                        </li>
+                        <li>
+                            <a class="white" href="terms-conditions.html">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a class="white" href="privacy-policy.html">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-md-4" style="text-align: center;">
+                <div class="text-container">
+                    <h4>Ferramentas</h4>
+                    <ul class="list-unstyled li-space-lg">
+                        <li>
+                            <a class="white" href="#your-link">businessgrowth.com</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">influencers.com</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">optimizer.net</a>
+                        </li>
+                    </ul>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-md-4" style="text-align: center;">
+                <div class="text-container">
+                    <h4>Parcerias</h4>
+                    <ul class="list-unstyled li-space-lg">
+                        <li>
+                            <a class="white" href="#your-link">unicorns.com</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">staffmanager.com</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">association.gov</a>
+                        </li>
+                    </ul>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+<!-- end of footer -->
+
+
+<!-- Copyright -->
+<div id="copyright" class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">Trabalho realizado por:<br>
+                    Daniel Ventura,
+                    Gonçalo Dinis,
+                    Rodrigo Gomes,
+                    Tiago Vieira
+                <p><a href="https://copyright.com" style="text-decoration: underline;cursor:pointer;">Copyright ©
+                        2020</a></p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of copyright -->
+<!-- end of copyright -->
+
+
+<!-- Scripts -->
+<script>
+
+    //buttons inserts
+    document.getElementById("novoFilmeSubmit").onclick = () => { novoFilme(); };
+    document.getElementById("novoAtorSubmit").onclick = () => { novoAtor(); };
+    document.getElementById("novoEstudioSubmit").onclick = () => { novoEstudio(); };
+    document.getElementById("novoRealizadorSubmit").onclick = () => { novoRealizador(); };
+    document.getElementById("novoCinemaSubmit").onclick = () => { novoCinema(); };
+    document.getElementById("novoTipoDePapelSubmit").onclick = () => { novoTipoDePapel(); };
+    document.getElementById("novoGeneroSubmit").onclick = () => { novoGenero(); };
+    document.getElementById("novoAtorPapeisSubmit").onclick = () => { novoAtorPapeis(); };
+    document.getElementById("novoAtorFilmeSubmit").onclick = () => { novoAtorFilme(); };
+    document.getElementById("novoFilmeGeneroSubmit").onclick = () => { novoFilmeGenero(); };
+    document.getElementById("novoFilmeCinemaSubmit").onclick = () => { novoFilmeCinema(); };
+
+    //variaveis necessarias para alterar filmes
+    const alterarFilmes = document.getElementsByClassName('buttonAlterarFilmes');
+    const chavePrimariaFilmes = document.getElementsByClassName('chavePrimariaFilmes');
+    const nomeOriginalFilmes = document.getElementsByClassName('nomeOriginalFilmes');
+    const nomePortuguesFilmes = document.getElementsByClassName('nomePortuguesFilmes');
+    const sinopseFilmes = document.getElementsByClassName('sinopseFilmes');
+    const realizadorFilmes = document.getElementsByClassName('realizadorFilmes');
+    const estudioFilmes = document.getElementsByClassName('estudioFilmes');
+    const duracaoDasFilmagensFilmes = document.getElementsByClassName('duracaoDasFilmagensFilmes');
+    const anoLancamentoFilmes = document.getElementsByClassName('anoLancamentoFilmes');
+    const custoTotalFilmes = document.getElementsByClassName('custoTotalFilmes');
+    const imagemFilmes = document.getElementsByClassName('imagemFilmes');
+
+    //variaveis necessarias para alterar realizadores
+    const alterarRealizadores = document.getElementsByClassName('buttonAlterarRealizadores');
+    const chavePrimariaRealizadores = document.getElementsByClassName('chavePrimariaRealizadores');
+    const nomeRealizadores = document.getElementsByClassName('nomeRealizadores');
+    const telefoneRealizadores = document.getElementsByClassName('telefoneRealizadores');
+    const imagemRealizadores = document.getElementsByClassName('imagemRealizadores');
+
+
+
+    //variaveis necessarias para alterar estudios
+    const alterarEstudios = document.getElementsByClassName('buttonAlterarEstudios');
+    const chavePrimariaEstudios = document.getElementsByClassName('chavePrimariaEstudios');
+    const nomeEstudios = document.getElementsByClassName('nomeEstudios');
+    const donoEstudios = document.getElementsByClassName('donoEstudios');
+    const moradaEstudios = document.getElementsByClassName('moradaEstudios');
+    const dataFundEstudios = document.getElementsByClassName('dataFundEstudios');
+    const lucroAnoAnteriorEstudios = document.getElementsByClassName('lucroAnoAnteriorEstudios');
+    const imagemEstudios = document.getElementsByClassName('imagemEstudios');
+
+    
+    //variaveis necessarias para alterar cinemas
+    const alterarCinemas = document.getElementsByClassName('buttonAlterarCinemas');
+    const chavePrimariaCinemas = document.getElementsByClassName('chavePrimariaCinemas');
+    const nomeCinemaCinemas = document.getElementsByClassName('nomeCinemaCinemas');
+    const localidadeCinemas = document.getElementsByClassName('localidadeCinemas');
+    const imagemCinemas = document.getElementsByClassName('imagemCinemas');
+
+
+
+    //variaveis necessarias para alterar atores
+    const alterarAtores = document.getElementsByClassName('buttonAlterarAtores');
+    const chavePrimariaAtores = document.getElementsByClassName('chavePrimariaAtores');
+    const nomeAtores = document.getElementsByClassName('nomeAtores');
+    const nIdentidadeAtores = document.getElementsByClassName('nIdentidadeAtores');
+    const segurancaSocialAtores = document.getElementsByClassName('segurancaSocialAtores');
+    const nacionalidadeAtores = document.getElementsByClassName('nacionalidadeAtores');
+    const dataNascAtores = document.getElementsByClassName('dataNascAtores');
+    const sexoAtores = document.getElementsByClassName('sexoAtores');
+    const telefoneAtores = document.getElementsByClassName('telefoneAtores');
+    const emailAtores = document.getElementsByClassName('emailAtores');
+    const imagemAtores = document.getElementsByClassName('imagemAtores');
+
+    //variaveis necessarias para alterar users
+    const usernameUsers = document.getElementsByClassName('usernameUsers');
+    const emailUsers = document.getElementsByClassName('emailUsers');
+    const privUsers = document.getElementsByClassName('privUsers');
+    const alterarUsers = document.getElementsByClassName('alterarUsers');
+
+    i = 0;
+    while(alterarUsers[i] != undefined){
+        const userAAlterar = alterarUsers[i].value;
+        const numero = i;
+        alterarUsers[i].onclick = () => { alterarUser(userAAlterar, numero); };
+        i = i + 1;
+    }
+
+        i = 0;
+    while(alterarAtores[i] != undefined){
+        const atorAAlterar = chavePrimariaAtores[i].value;       
+        const numero = i;
+        alterarAtores[i].onclick = () => { alterarAtor(atorAAlterar, numero); };
+        i = i + 1;
+    }
+
+
+    i = 0;
+    while(alterarCinemas[i] != undefined){
+        const cinemaAAlterar = chavePrimariaCinemas[i].value;       
+        const numero = i;
+        alterarCinemas[i].onclick = () => { alterarCinema(cinemaAAlterar, numero); };
+        i = i + 1;
+    }
+
+
+
+    i = 0;
+    while(alterarEstudios[i] != undefined){
+        const estudioAAlterar = chavePrimariaEstudios[i].value;       
+        const numero = i;
+        alterarEstudios[i].onclick = () => { alterarEstudio(estudioAAlterar, numero); };
+        i = i + 1;
+    }
+
+
+    i = 0;
+    while(alterarRealizadores[i] != undefined){
+        const realizadorAAlterar = chavePrimariaRealizadores[i].value;       
+        const numero = i;
+        alterarRealizadores[i].onclick = () => { alterarRealizador(realizadorAAlterar, numero); };
+        i = i + 1;
+    }
+
+
+
+
+    i = 0;
+    while(alterarFilmes[i] != undefined){
+        const filmeAAlterar = chavePrimariaFilmes[i].value;       
+        const numero = i;
+        alterarFilmes[i].onclick = () => { alterarFilme(filmeAAlterar, numero); };
+        i = i + 1;
+    }
+
+
+
+    const eliminarFilmeCinemas = document.getElementsByClassName('eliminarFilmeCinema');
+    i = 0;
+    while(eliminarFilmeCinemas[i] != undefined)
+    {
+        let conjunto = eliminarFilmeCinemas[i].value;
+        
+        const splits = conjunto.split('|');
+        const filme = splits[0];
+        const nomeCinema = splits[1];
+        const localidade = splits[2];
+        eliminarFilmeCinemas[i].onclick = () => { eliminarFilmeCinema(filme, nomeCinema, localidade); };
+        i = i + 1;
+    }
+
+
+    const eliminarFilmeGeneros = document.getElementsByClassName('eliminarFilmeGenero');
+    i = 0;
+    while(eliminarFilmeGeneros[i] != undefined)
+    {
+        let conjunto = eliminarFilmeGeneros[i].value;
+        
+        const splits = conjunto.split('|');
+        const filme = splits[0];
+        const genero = splits[1];
+        eliminarFilmeGeneros[i].onclick = () => { eliminarFilmeGenero(filme, genero); };
+        i = i + 1;
+    }
+
+    const eliminarAtorFilmes = document.getElementsByClassName('eliminarAtorFilme');
+    i = 0;
+    while(eliminarAtorFilmes[i] != undefined)
+    {
+        let conjunto = eliminarAtorFilmes[i].value;
+        
+        const splits = conjunto.split('|');
+        const ator = splits[0];
+        const filme = splits[1];
+        eliminarAtorFilmes[i].onclick = () => { eliminarAtorFilme(ator, filme); };
+        i = i + 1;
+    }
+
+
+
+    const eliminarAtorPapeis = document.getElementsByClassName('eliminarAtorPapeis');
+    i = 0;
+    while(eliminarAtorPapeis[i] != undefined)
+    {
+        let conjunto = eliminarAtorPapeis[i].value;
+        
+        const splits = conjunto.split('|');
+        const ator = splits[0];
+        const papel = splits[1];
+        eliminarAtorPapeis[i].onclick = () => { eliminarAtorPapel(ator, papel); };
+        i = i + 1;
+    }
+
+    
+    const eliminarGeneros = document.getElementsByClassName('eliminarGeneros');
+    i = 0;
+    while(eliminarGeneros[i] != undefined)
+    {
+        let generoAEliminar = eliminarGeneros[i].value;
+        eliminarGeneros[i].onclick = () => { eliminarGenero(generoAEliminar); };
+        i = i + 1;
+    }
+
+    const eliminarTiposDePapel = document.getElementsByClassName('eliminarTiposDePapel');
+    i = 0;
+    while(eliminarTiposDePapel[i] != undefined)
+    {
+        let tipoDePapelAEliminar = eliminarTiposDePapel[i].value;
+        eliminarTiposDePapel[i].onclick = () => { eliminarTipoDePapel(tipoDePapelAEliminar); };
+        i = i + 1;
+    }
+
+    const eliminarFilmes = document.getElementsByClassName('buttonEliminarFilmes');
+    i = 0;
+    while(eliminarFilmes[i] != undefined)
+    {
+        let filmeAEliminar = eliminarFilmes[i].value;
+        eliminarFilmes[i].onclick = () => { eliminarFilme(filmeAEliminar); };
+        i = i + 1;
+    }
+
+    
+    const eliminarAtores = document.getElementsByClassName('buttonEliminarAtores');
+    i = 0;
+    while(eliminarAtores[i] != undefined)
+    {
+        let atorAEliminar = eliminarAtores[i].value;
+        eliminarAtores[i].onclick = () => { eliminarAtor(atorAEliminar); };
+        i = i + 1;
+    }
+    
+    const eliminarEstudios = document.getElementsByClassName('buttonEliminarEstudios');
+    i = 0;
+    while(eliminarEstudios[i] != undefined)
+    {
+        let estudioAEliminar = eliminarEstudios[i].value;
+        eliminarEstudios[i].onclick = () => { eliminarEstudio(estudioAEliminar); };
+        i = i + 1;
+    }
+
+
+    const eliminarCinemas = document.getElementsByClassName('buttonEliminarCinemas');
+    i = 0;
+    while(eliminarCinemas[i] != undefined)
+    {
+        let cinemaAEliminar = eliminarCinemas[i].value;
+        eliminarCinemas[i].onclick = () => { eliminarCinema(cinemaAEliminar); };
+        i = i + 1;
+    }
+
+
+    const eliminarRealizadores = document.getElementsByClassName('buttonEliminarRealizadores');
+    i = 0;
+    while(eliminarRealizadores[i] != undefined)
+    {
+        let realizadorAEliminar = eliminarRealizadores[i].value;
+        eliminarRealizadores[i].onclick = () => { eliminarRealizador(realizadorAEliminar); };
+        i = i + 1;
+    }
+
+
+
+    function novoFilme() {
+        const urlBase = "http://localhost:3000";
+        const nomeOriginal = document.getElementById("nomeOriginal").value;
+        const nomePortugues = document.getElementById("nomePortugues").value;
+        const sinopse = document.getElementById("sinopse").value;
+        const realizador = document.getElementById("realizador").value;
+        const estudio = document.getElementById("estudio").value;
+        const duracaoDasFilmagens = document.getElementById("duracaoDasFilmagens").value;
+        const anoLancamento = document.getElementById("anoLancamento").value;
+        const custoTotal = document.getElementById("custoTotal").value;
+        const imagem = document.getElementById("imagemFilme").value;
+        if (nomeOriginal == "" || nomePortugues == "" || sinopse == "" || realizador == "" || estudio == "" || duracaoDasFilmagens == "" || anoLancamento == "" || custoTotal == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ nomeOriginal, nomePortugues, sinopse, realizador, estudio, duracaoDasFilmagens, anoLancamento, custoTotal, imagem });
+        return fetch(`${urlBase}/addFilme`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o filme à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+                const mensagemDeErro = document.getElementById("NFmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Ocurreu algum erro!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+        });
+    }
+
+    function novoAtor() {
+        const urlBase = "http://localhost:3000";
+        const nome = document.getElementById("nomeAtor").value;
+        const nIdentidade = document.getElementById("nIdentidade").value;
+        const segSocial = document.getElementById("segSocial").value;
+        const nacionalidade = document.getElementById("nacionalidade").value;
+        const dataDeNascimento = document.getElementById("dataDeNascimento").value;
+        const telefone = document.getElementById("telefoneAtor").value;
+        const sexo = document.getElementById("sexo").value;
+        const email = document.getElementById("email").value;
+        const imagem = document.getElementById("imagemAtor").value;
+        if (nome == "" || nIdentidade == "" || segSocial == "" || nacionalidade == "" || dataDeNascimento == "" || telefone == "" || email == "" || sexo == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ nome, nIdentidade, segSocial, nacionalidade, dataDeNascimento, telefone, email, sexo, imagem });
+        return fetch(`${urlBase}/addAtor`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                const mensagemDeErro = document.getElementById("NAmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Número de identidade do ator já existente na base de dados!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o ator à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+    function novoEstudio() {
+        const urlBase = "http://localhost:3000";
+        const nome = document.getElementById("nomeEstudio").value;
+        const dono = document.getElementById("dono").value;
+        const endereco = document.getElementById("endereco").value;
+        const dtFundacao = document.getElementById("dtFundacao").value;
+        const lucro = document.getElementById("lucro").value;
+        const imagem = document.getElementById("imagemEstudio").value;
+        if (nome == "" || dono == "" || endereco == "" || dtFundacao == "" || lucro == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ nome, dono, endereco, dtFundacao, lucro, imagem });
+        return fetch(`${urlBase}/addEstudio`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                const mensagemDeErro = document.getElementById("NEmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Estudio já existente na base de dados!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o estudio à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+            }
+        });
+    }
+
+
+    function novoRealizador() {
+        const urlBase = "http://localhost:3000";
+        const nome = document.getElementById("nomeRealizador").value;
+        const telefone = document.getElementById("telefoneRealizador").value;
+        const imagem = document.getElementById("imagemRealizador").value;
+        if (nome == "" || telefone == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ nome, telefone, imagem });
+        return fetch(`${urlBase}/addRealizador`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {                
+                const mensagemDeErro = document.getElementById("NAmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Realizador já existente na base de dados!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o realizador à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+    function novoCinema() {
+        const urlBase = "http://localhost:3000";
+        const nome = document.getElementById("nomeCinema").value;
+        const Localidade = document.getElementById("localidade").value;
+        const imagem = document.getElementById("imagemCinema").value;
+        if (nome == "" || Localidade == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ nome, Localidade, imagem });
+        return fetch(`${urlBase}/addCinema`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                const mensagemDeErro = document.getElementById("NCmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Cinema com esse nome e essa localidade já está na base de dados!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o cinema à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    function novoTipoDePapel() {
+        const urlBase = "http://localhost:3000";
+        const tipoDePapel = document.getElementById("novoTipoDePapelNome").value;
+        if (tipoDePapel == "") {
+            return false;
+        }
+        const body = JSON.stringify({ tipoDePapel });
+        return fetch(`${urlBase}/addTipoDePapel`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                const mensagemDeErro = document.getElementById("TdpmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Tipo de papel já existente!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o tipoDePapel à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+    function novoGenero() {
+        const urlBase = "http://localhost:3000";
+        const genero = document.getElementById("novoGeneroNome").value;
+        if (genero == "") {
+            return false;
+        }
+        const body = JSON.stringify({ genero });
+        return fetch(`${urlBase}/addGenero`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {                
+                const mensagemDeErro = document.getElementById("GmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Género já existente!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o genero à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+    function novoAtorPapeis() {
+        const urlBase = "http://localhost:3000";
+        const ator = document.getElementById("novoAtorPapeisAtor").value;
+        const papel = document.getElementById("novoAtorPapeisPapeis").value;
+        if ((ator == "") || (papel == "")) {
+            return false;
+        }
+        const body = JSON.stringify({ ator, papel });
+        return fetch(`${urlBase}/addAtorPapeis`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {                
+                const mensagemDeErro = document.getElementById("ApmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Ator já tem esse papel!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o papel ao ator na base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+    function novoAtorFilme() {
+        const urlBase = "http://localhost:3000";
+        const ator = document.getElementById("novoAtorFilmeAtor").value;
+        const filme = document.getElementById("novoAtorFilmeFilme").value;
+        const personagem = document.getElementById("novoAtorFilmePersonagem").value;
+        if ((ator == "") || (filme == "") || (personagem == "")) {
+            return false;
+        }
+        const body = JSON.stringify({ ator, filme, personagem });
+        return fetch(`${urlBase}/addAtorFilme`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {                
+                const mensagemDeErro = document.getElementById("AfmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Filme já tem esse ator!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o ator ao filme na base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    function novoFilmeGenero() {
+        const urlBase = "http://localhost:3000";
+        const filme = document.getElementById("novoFilmeFilmeGenero").value;
+        const genero = document.getElementById("novoGeneroFilmeGenero").value;
+        if ((filme == "") || (genero == "")) {
+            return false;
+        }
+        const body = JSON.stringify({ filme, genero });
+        return fetch(`${urlBase}/addFilmeGenero`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {                
+                const mensagemDeErro = document.getElementById("FgmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Filme já tem esse género!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o genero ao filme na base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    function novoFilmeCinema() {
+        const urlBase = "http://localhost:3000";
+        const filme = document.getElementById("novoFilmeFilmeCinema").value;
+        const cinema = document.getElementById("novoCinemaFilmeCinema").value;
+        const splits = cinema.split('|');
+        const nomeCinema = splits[0];
+        const localidade = splits[1];
+        if ((filme == "") || (nomeCinema == "") || (localidade == "")) {
+            return false;
+        }
+        const body = JSON.stringify({ filme, nomeCinema, localidade });
+        return fetch(`${urlBase}/addFilmeCinema`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {                
+                const mensagemDeErro = document.getElementById("FcmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >Cinema já tem esse filme!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A adicionar o filme ao cinema na base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    function eliminarFilme(numeroDoFilmeAEliminar){
+        const urlBase = "http://localhost:3000";
+        const idFilme = numeroDoFilmeAEliminar;
+        
+        const body = JSON.stringify({ idFilme });
+        return fetch(`${urlBase}/eliminarFilme`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o filme da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+    function eliminarAtor(numeroDoAtorAEliminar){
+        const urlBase = "http://localhost:3000";
+        const nIdentidade = numeroDoAtorAEliminar;
+        
+        const body = JSON.stringify({ nIdentidade });
+        return fetch(`${urlBase}/eliminarAtor`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o ator da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+    
+    function eliminarRealizador(numeroDoRealizadorAEliminar){
+        const urlBase = "http://localhost:3000";
+        const nome = numeroDoRealizadorAEliminar;
+        
+        const body = JSON.stringify({ nome });
+        return fetch(`${urlBase}/eliminarRealizador`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o realizador da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+    function eliminarCinema(numeroDoCinemaAEliminar){
+        const urlBase = "http://localhost:3000";
+        const splits = numeroDoCinemaAEliminar.split('|');
+        const nome = splits[0];
+        const localidade = splits[1];
+
+        
+        const body = JSON.stringify({ nome, localidade });
+        return fetch(`${urlBase}/eliminarCinema`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o cinema da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+    function eliminarEstudio(numeroDoEstudioAEliminar){
+        const urlBase = "http://localhost:3000";
+        const nome = numeroDoEstudioAEliminar;
+
+        
+        const body = JSON.stringify({ nome });
+        return fetch(`${urlBase}/eliminarEstudio`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o estudio da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+    function eliminarTipoDePapel(numeroDoTipoDePapelAEliminar){
+        const urlBase = "http://localhost:3000";
+        const idTiposDePapel = numeroDoTipoDePapelAEliminar;        
+        const body = JSON.stringify({ idTiposDePapel });
+        return fetch(`${urlBase}/eliminarTipoDePapel`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o tipoDePapel da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    function eliminarGenero(numeroDoIdGeneroAEliminar){
+        const urlBase = "http://localhost:3000";
+        const idGenero = numeroDoIdGeneroAEliminar;        
+        const body = JSON.stringify({ idGenero });
+        return fetch(`${urlBase}/eliminarGenero`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o genero da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    function eliminarAtorPapel(ator, papel){
+        const urlBase = "http://localhost:3000";
+        const body = JSON.stringify({ ator, papel });
+        return fetch(`${urlBase}/eliminarAtorPapeis`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o papel do ator da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+    
+    function eliminarAtorFilme(ator, filme){
+        const urlBase = "http://localhost:3000";
+        const body = JSON.stringify({ ator, filme });
+        return fetch(`${urlBase}/eliminarAtorFilme`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o ator do filme da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    
+    function eliminarFilmeGenero(filme, genero){
+        const urlBase = "http://localhost:3000";
+        const body = JSON.stringify({ filme, genero });
+        return fetch(`${urlBase}/eliminarFilmeGenero`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o genero do filme da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    
+    function eliminarFilmeCinema(filme, nomeCinema, localidade){
+        const urlBase = "http://localhost:3000";
+        const body = JSON.stringify({ filme, nomeCinema, localidade });
+        return fetch(`${urlBase}/eliminarFilmeCinema`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A eliminar o filme do cinema da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            }
+        });
+    }
+
+
+
+    function alterarUser(userAAlterar, numero){
+        const urlBase = "http://localhost:3000";
+        const username = usernameUsers[numero].value;
+        const email = emailUsers[numero].value;
+        const priv = privUsers[numero].value;
+        if (username == "" || email == "" || priv == "") {
+            return false;
+        }
+        const body = JSON.stringify({ userAAlterar, username, email, priv });
+        return fetch(`${urlBase}/alterarUser`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                const mensagemDeErro = document.getElementById("UAmsgSubmit");
+                mensagemDeErro.innerHTML = "<font color = 'red' >User já existente!</font>";
+                mensagemDeErro.hidden = false;
+                return false;
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                if(sessionStorage.getItem("username") == userAAlterar){
+                    sessionStorage.setItem("username", username);
+                }
+                setTimeout(function () { console.log("A alterar o user à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+                return false;
+            }
+        });
+
+    }
+
+
+
+
+    function alterarFilme(filmeAAlterar, numero){        
+        const urlBase = "http://localhost:3000";
+        const nomeOriginal = nomeOriginalFilmes[0].value;
+        const nomePortugues = nomePortuguesFilmes[0].value;
+        const sinopse = sinopseFilmes[0].value;
+        const realizador = realizadorFilmes[0].value;
+        const estudio = estudioFilmes[0].value;
+        const duracaoDasFilmagens = duracaoDasFilmagensFilmes[0].value;
+        const anoLancamento = anoLancamentoFilmes[0].value;
+        const custoTotal = custoTotalFilmes[0].value;
+        const imagem = imagemFilmes[0].value;
+        if (nomeOriginal == "" || nomePortugues == "" || sinopse == "" || realizador == "" || estudio == "" || duracaoDasFilmagens == "" || anoLancamento == "" || custoTotal == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ filmeAAlterar, nomeOriginal, nomePortugues, sinopse, realizador, estudio, duracaoDasFilmagens, anoLancamento, custoTotal, imagem });
+        return fetch(`${urlBase}/alterarFilme`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A alterar o filme à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+                return false;
+            }
+        });
+
+    }
+
+
+
+    function alterarAtor(atorAAlterar, numero){
+        const urlBase = "http://localhost:3000";
+        const nome = nomeAtores[0].value;
+        const nIdentidade = nIdentidadeAtores[0].value;
+        const segurancaSocial = segurancaSocialAtores[0].value;
+        const nacionalidade = nacionalidadeAtores[0].value;
+        const dataNasc = dataNascAtores[0].value;
+        const sexo = sexoAtores[0].value;
+        const telefone = telefoneAtores[0].value;
+        const email = emailAtores[0].value;
+        const imagem = imagemAtores[0].value;
+        if (nome == "" || nIdentidade == "" || telefone == "" || segurancaSocial == "" || nacionalidade == "" || dataNasc == "" || sexo == "" || email == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ atorAAlterar, nome, nIdentidade, telefone, segurancaSocial, nacionalidade, dataNasc, sexo, email, imagem });
+        return fetch(`${urlBase}/alterarAtor`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A alterar o ator da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+                return false;
+            }
+        });
+
+    }
+
+
+
+
+    function alterarRealizador(realizadorAAlterar, numero){     
+        const urlBase = "http://localhost:3000";
+        const nome = nomeRealizadores[0].value;
+        const telefone = telefoneRealizadores[0].value;
+        const imagem = imagemRealizadores[0].value;
+        if (nome == "" || telefone == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ realizadorAAlterar, nome, telefone, imagem });
+        return fetch(`${urlBase}/alterarRealizador`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A alterar o realizador à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+                return false;
+            }
+        });
+
+    }
+
+
+
+
+    function alterarEstudio(estudioAAlterar, numero){
+        const urlBase = "http://localhost:3000";
+        const nome = nomeEstudios[0].value;
+        const dono = donoEstudios[0].value;
+        const morada = moradaEstudios[0].value;
+        const dataFund = dataFundEstudios[0].value;
+        const lucroAnoAnterior = lucroAnoAnteriorEstudios[0].value;
+        const imagem = imagemEstudios[0].value;
+        if (nome == "" || dono == "" || morada == "" || dataFund == "" || lucroAnoAnterior == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ estudioAAlterar, nome, dono, morada, dataFund, lucroAnoAnterior, imagem });
+        return fetch(`${urlBase}/alterarEstudio`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A alterar o realizador à base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+                return false;
+            }
+        });
+
+    }
+
+
+
+
+    function alterarCinema(cinemaAAlterar, numero){
+        const urlBase = "http://localhost:3000";
+        const splits = cinemaAAlterar.split('|');
+        const nomeCinemaAAlterar = splits[0];
+        const localidadeCinemaAAlterar = splits[1];
+        const nomeCinema = nomeCinemaCinemas[0].value;
+        const localidade = localidadeCinemas[0].value;
+        const imagem = imagemCinemas[0].value;
+        if (nomeCinema == "" || localidade == "" || imagem == "") {
+            return false;
+        }
+        const body = JSON.stringify({ nomeCinemaAAlterar, localidadeCinemaAAlterar, nomeCinema, localidade, imagem });
+        return fetch(`${urlBase}/alterarCinema`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: body
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        }).then((result) => {
+            if (result == true) {
+                setTimeout(function () { console.log("A alterar o cinema da base de dados...") }, 500);
+                window.location.href = "http://localhost:3000/admin";
+            } else {
+                return false;
+            }
+        });
+
+    }
+
+
+
+    function abrirItens(categoria) {
+        document.body.style.backgroundColor = "#153e52";
+        window.scrollTo(0, document.body.scrollHeight);
+        document.getElementById("itens").hidden = false;
+        if (categoria === undefined) {
+            categoria = "showAll";
+        }
+        switch (categoria) {
+            case "showAll":
+                document.getElementById("itensShowAll").click();
+                break;
+
+            case "filmes":
+                document.getElementById("itensFilmes").click();
+                break;
+
+            case "atores":
+                document.getElementById("itensAtores").click();
+                break;
+            case "estudios":
+                document.getElementById("itensEstudios").click();
+                break;
+
+            case "realizadores":
+                document.getElementById("itensRealizadores").click();
+                break;
+
+            case "cinemas":
+                document.getElementById("itensCinemas").click();
+                break;
+        }
+
+
+        document.getElementById("header").hidden = true;
+        document.getElementById("intro").hidden = true;
+        document.getElementById("itensNovos").hidden = true;
+        document.getElementById("favoritos").hidden = true;
+        document.getElementById("categoria").hidden = true;
+        document.getElementById("fakeAcerca").hidden = false;
+        document.getElementById("login").hidden = true;
+        document.getElementById("acerca").hidden = true;
+        document.getElementById("contacto").hidden = true;
+        document.getElementById("basic-2").hidden = true;
+
+
+    }
+
+
+
+    function verificarLogin() {
+        const nome = document.getElementById("Lusername").value;
+        const password = document.getElementById("Lpassword").value;
+        if (!nome == "" || !password == "") {
+            if (nome == username_db && password == password_db) {
+                sessionStorage.setItem("username", nome);
+                return true;
+            } else if (nome == admin_username_db && password == admin_password_db) {
+                sessionStorage.setItem("username", nome);
+                return true;
+            } else {
+                document.getElementById("Lerro").innerHTML = "<span style = 'color:red;' >Utilizador não encontrado...</span>";
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+
+    }
+
+
+
+    function logout() {
+        sessionStorage.clear();
+        window.scrollTo(0, document.getElementById("header"));
+        location.reload();
+    }
+
+
+    function trocar(trocarPara, numero) {
+        if (trocarPara == "fav") {
+            switch (numero) {
+                case 1:
+                    document.getElementById("itensNFav1").hidden = true;
+                    document.getElementById("itensFav1").hidden = false;
+                    document.getElementById("favoritosNFav1").hidden = true;
+                    document.getElementById("favoritosFav1").hidden = false;
+                    sessionStorage.setItem("item1", "favorito");
+                    break;
+                case 2:
+                    document.getElementById("itensNFav2").hidden = true;
+                    document.getElementById("itensFav2").hidden = false;
+                    document.getElementById("favoritosNFav2").hidden = true;
+                    document.getElementById("favoritosFav2").hidden = false;
+                    sessionStorage.setItem("item2", "favorito");
+                    break;
+                case 3:
+                    document.getElementById("itensNFav3").hidden = true;
+                    document.getElementById("itensFav3").hidden = false;
+                    document.getElementById("favoritosNFav3").hidden = true;
+                    document.getElementById("favoritosFav3").hidden = false;
+                    sessionStorage.setItem("item3", "favorito");
+                    break;
+                case 4:
+                    document.getElementById("itensNFav4").hidden = true;
+                    document.getElementById("itensFav4").hidden = false;
+                    document.getElementById("favoritosNFav4").hidden = true;
+                    document.getElementById("favoritosFav4").hidden = false;
+                    sessionStorage.setItem("item4", "favorito");
+                    break;
+                case 5:
+                    document.getElementById("itensNFav5").hidden = true;
+                    document.getElementById("itensFav5").hidden = false;
+                    document.getElementById("favoritosNFav5").hidden = true;
+                    document.getElementById("favoritosFav5").hidden = false;
+                    sessionStorage.setItem("item5", "favorito");
+                    break;
+                case 6:
+                    document.getElementById("itensNFav6").hidden = true;
+                    document.getElementById("itensFav6").hidden = false;
+                    document.getElementById("favoritosNFav6").hidden = true;
+                    document.getElementById("favoritosFav6").hidden = false;
+                    sessionStorage.setItem("item6", "favorito");
+                    break;
+                case 7:
+                    document.getElementById("itensNFav7").hidden = true;
+                    document.getElementById("itensFav7").hidden = false;
+                    document.getElementById("favoritosNFav7").hidden = true;
+                    document.getElementById("favoritosFav7").hidden = false;
+                    sessionStorage.setItem("item7", "favorito");
+                    break;
+                case 8:
+                    document.getElementById("itensNFav8").hidden = true;
+                    document.getElementById("itensFav8").hidden = false;
+                    document.getElementById("favoritosNFav8").hidden = true;
+                    document.getElementById("favoritosFav8").hidden = false;
+                    sessionStorage.setItem("item8", "favorito");
+                    break;
+                case 9:
+                    document.getElementById("itensNFav9").hidden = true;
+                    document.getElementById("itensFav9").hidden = false;
+                    document.getElementById("favoritosNFav9").hidden = true;
+                    document.getElementById("favoritosFav9").hidden = false;
+                    sessionStorage.setItem("item9", "favorito");
+                    break;
+                case 10:
+                    document.getElementById("itensNFav10").hidden = true;
+                    document.getElementById("itensFav10").hidden = false;
+                    document.getElementById("favoritosNFav10").hidden = true;
+                    document.getElementById("favoritosFav10").hidden = false;
+                    sessionStorage.setItem("item10", "favorito");
+                    break;
+
+            }
+        } else {
+            switch (numero) {
+                case 1:
+                    document.getElementById("itensNFav1").hidden = false;
+                    document.getElementById("itensFav1").hidden = true;
+                    document.getElementById("favoritosNFav1").hidden = false;
+                    document.getElementById("favoritosFav1").hidden = true;
+                    sessionStorage.removeItem("item1");
+                    break;
+                case 2:
+                    document.getElementById("itensNFav2").hidden = false;
+                    document.getElementById("itensFav2").hidden = true;
+                    document.getElementById("favoritosNFav2").hidden = false;
+                    document.getElementById("favoritosFav2").hidden = true;
+                    sessionStorage.removeItem("item2");
+                    break;
+                case 3:
+                    document.getElementById("itensNFav3").hidden = false;
+                    document.getElementById("itensFav3").hidden = true;
+                    document.getElementById("favoritosNFav3").hidden = false;
+                    document.getElementById("favoritosFav3").hidden = true;
+                    sessionStorage.removeItem("item3");
+                    break;
+                case 4:
+                    document.getElementById("itensNFav4").hidden = false;
+                    document.getElementById("itensFav4").hidden = true;
+                    document.getElementById("favoritosNFav4").hidden = false;
+                    document.getElementById("favoritosFav4").hidden = true;
+                    sessionStorage.removeItem("item4");
+                    break;
+                case 5:
+                    document.getElementById("itensNFav5").hidden = false;
+                    document.getElementById("itensFav5").hidden = true;
+                    document.getElementById("favoritosNFav5").hidden = false;
+                    document.getElementById("favoritosFav5").hidden = true;
+                    sessionStorage.removeItem("item5");
+                    break;
+                case 6:
+                    document.getElementById("itensNFav6").hidden = false;
+                    document.getElementById("itensFav6").hidden = true;
+                    document.getElementById("favoritosNFav6").hidden = false;
+                    document.getElementById("favoritosFav6").hidden = true;
+                    sessionStorage.removeItem("item6");
+                    break;
+                case 7:
+                    document.getElementById("itensNFav7").hidden = false;
+                    document.getElementById("itensFav7").hidden = true;
+                    document.getElementById("favoritosNFav7").hidden = false;
+                    document.getElementById("favoritosFav7").hidden = true;
+                    sessionStorage.removeItem("item7");
+                    break;
+                case 8:
+                    document.getElementById("itensNFav8").hidden = false;
+                    document.getElementById("itensFav8").hidden = true;
+                    document.getElementById("favoritosNFav8").hidden = false;
+                    document.getElementById("favoritosFav8").hidden = true;
+                    sessionStorage.removeItem("item8");
+                    break;
+                case 9:
+                    document.getElementById("itensNFav9").hidden = false;
+                    document.getElementById("itensFav9").hidden = true;
+                    document.getElementById("favoritosNFav9").hidden = false;
+                    document.getElementById("favoritosFav9").hidden = true;
+                    sessionStorage.removeItem("item9");
+                    break;
+                case 10:
+                    document.getElementById("itensNFav10").hidden = false;
+                    document.getElementById("itensFav10").hidden = true;
+                    document.getElementById("favoritosNFav10").hidden = false;
+                    document.getElementById("favoritosFav10").hidden = true;
+                    sessionStorage.removeItem("item10");
+                    break;
+
+            }
+        }
+    }
+
+
+    function verInfo(nDaCarta) {
+        let IdDaCarta = "itensAbrirProject-" + nDaCarta;
+        document.getElementById("abrirItens").click();
+        setTimeout(() => { document.getElementById(IdDaCarta).click(); }, 550);
+
+
+    }
+
+    if (localStorage.getItem("token") !== null) {
+        const token = localStorage.token;
+        const envioDeToken = { token };
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(envioDeToken)
+        }
+        async function retornoDaVerificacaoLogin() {
+            const retorno = await fetch('/verificarToken', options);
+            retorno2 = await retorno.json();
+            const usernameGlobal = retorno2.username;
+            const adminGlobal = retorno2.admin;
+            if (usernameGlobal != "") {
+                //tem a sessao iniciada
+            }
+            if (adminGlobal == true) {
+                //é admin              
+            } else {
+                //não é admin
+                location.replace("/");
+
+            }
+        }
+        retornoDaVerificacaoLogin();
+
+    } else {
+        location.replace("/");
+    }
+
+
+</script>
